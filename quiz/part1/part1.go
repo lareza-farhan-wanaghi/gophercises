@@ -8,6 +8,7 @@ import (
 	"strings"
 )
 
+// main provides the entry point of the app
 func main() {
 	data, err := getQuenstions("problems.csv")
 	if err != nil {
@@ -16,6 +17,7 @@ func main() {
 	simulateQuiz(data)
 }
 
+// simulateQuiz simulates the desired quiz, which will read user inputs and respond to them
 func simulateQuiz(data [][]string) {
 	scanner := bufio.NewScanner(os.Stdin)
 	score := 0
@@ -30,6 +32,7 @@ func simulateQuiz(data [][]string) {
 	fmt.Printf("You have correctly answered %d over %d questions!\n", score, len(data))
 }
 
+// getQuenstions returns question and answer pairs from a given CSV file
 func getQuenstions(filename string) ([][]string, error) {
 	f, err := os.Open(filename)
 	if err != nil {

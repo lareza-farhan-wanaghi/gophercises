@@ -11,6 +11,7 @@ import (
 	"time"
 )
 
+// main provides the entry point of the app
 func main() {
 	timeFlag := flag.Int("t", 30, "Specifies time of the quiz")
 	shuffleFlag := flag.Bool("s", false, "Specifies whether the quiz need to be shuffled")
@@ -22,6 +23,8 @@ func main() {
 	}
 	simulateQuiz(data, timeFlag)
 }
+
+// simulateQuiz simulates the desired quiz, which will read user inputs and respond to them
 func simulateQuiz(data [][]string, timeFlag *int) {
 	score := 0
 	scanner := bufio.NewScanner(os.Stdin)
@@ -47,6 +50,7 @@ func simulateQuiz(data [][]string, timeFlag *int) {
 	fmt.Printf("You have correctly answered %d over %d questions!\n", score, len(data))
 }
 
+// getQuenstions returns question and answer pairs from a given CSV file
 func getQuenstions(filename string, shuffleFlag *bool) ([][]string, error) {
 	f, err := os.Open(filename)
 	if err != nil {
