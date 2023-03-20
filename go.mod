@@ -1,4 +1,4 @@
-module github.com/gophercises
+module github.com/lareza-farhan-wanaghi/gophercises
 
 go 1.19
 
