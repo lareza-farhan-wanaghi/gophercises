@@ -4,7 +4,7 @@
 
 ## Description
 
-This repository contains my solutions for the [gophercises](https://gophercises.com/) exercises. All code is written with my ideas without viewing the tutorial videos provided, as a challenge
+This repository contains my solutions for the [gophercises](https://gophercises.com/) exercises. Note: All code is written with my own ideas without viewing the tutorial videos.
 
 
 ### Folder details
@@ -23,10 +23,12 @@ Solution for the 2nd exercise. Activities involved: making a simple HTTP listene
 
 Solution for the 3rd exercise. Activities involved: creating go template files & the functions to parse them and an HTTP handler that renders the parsed go templates. [Learn more](https://github.com/gophercises/cyoa)
 
+
 **4. link**
 
 Solution for the 4th exercise. Activities involved: creating functions to parse an HTML file and collect the href values & inner texts of all "a" tags within the specified HTML file and writing test functions to test the functions created. [Learn more](https://github.com/gophercises/link)
 
+
 **5. sitemap**
 
-Solution for the 5th exercise. Activities involved: creating functions to crawl an URL and return all reachable URLs with the same domain name, which runs asynchronously with the help of mutex and wait-group structs, implementing regex match & searching, and writing test functions. [Learn more](https://github.com/gophercises/link)
+Solution for the 5th exercise. Activities involved: creating functions to crawl all reachable same-domain URLs from a specific URL and turn them into a sitemap XML, implementing regex match & searching, and writing test functions. [Learn more](https://github.com/gophercises/link)
