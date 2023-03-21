@@ -4,7 +4,7 @@
 
 ## Description
 
-This repository contains my solutions for the [gophercises](https://gophercises.com/) exercises. Note: All code is written with my own ideas without viewing the tutorial videos.
+This repository contains my solutions for the [gophercises](https://gophercises.com/) exercises. Note: All codes are written with my own ideas without viewing the tutorial videos.
 
 
 ### Folder details
