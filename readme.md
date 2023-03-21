@@ -36,4 +36,4 @@ Solution for the 5th exercise. Activities involved: creating functions to crawl 
 
 **6. hr1**
 
-Solution for the 6th exercise. Activities involved: creating solutions for the caesarchiper and camelcase hacker rank problems, which play with strings and rune data type. [Learn more](https://github.com/gophercises/hr1)
+Solution for the 6th exercise. Activities involved: creating solutions for the caesarchiper and camelcase hacker rank problems, which play with the string and rune data types. [Learn more](https://github.com/gophercises/hr1)
