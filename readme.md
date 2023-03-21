@@ -31,4 +31,4 @@ Solution for the 4th exercise. Activities involved: creating functions to parse 
 
 **5. sitemap**
 
-Solution for the 5th exercise. Activities involved: creating functions to crawl all reachable same-domain URLs from a specific URL and turn them into a sitemap XML, implementing regex match & searching, and writing test functions. [Learn more](https://github.com/gophercises/link)
+Solution for the 5th exercise. Activities involved: creating functions to crawl all reachable same-domain URLs from a specific URL, which runs asynchronously with the help of mutex and wait-group structs, and turn them into a sitemap XML, implementing regex match & searching, and writing test functions. [Learn more](https://github.com/gophercises/link)
