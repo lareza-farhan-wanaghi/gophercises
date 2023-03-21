@@ -1,10 +1,10 @@
-# Gohercises
+# Gophercises
 
 ![Completion status: on-going](https://img.shields.io/badge/COMPLETION%20STATUS-ON--GOING-informational?style=for-the-badge)
 
 ## Description
 
-This repository contains my solutions for the [gophercises](https://gophercises.com/) exercises. Note: All codes are written with my own ideas without viewing the tutorial videos.
+This repository contains my solutions for the [gophercises](https://gophercises.com/) exercises. As a challenge, all codes are written with my own ideas without viewing the tutorial videos.
 
 
 ### Folder details
