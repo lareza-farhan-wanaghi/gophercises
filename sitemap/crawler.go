@@ -10,7 +10,7 @@ import (
 	"github.com/lareza-farhan-wanaghi/gophercises/link"
 )
 
-type Crawler struct {
+type crawler struct {
 	visitedUrl map[string]struct{}
 	maxDepth   int
 	rootUrl    string
@@ -20,7 +20,7 @@ type Crawler struct {
 }
 
 // CrawlWeb starts the crawling activity from the rootUrl to return all visited URLs for the given max depth
-func (c *Crawler) CrawlWeb() ([]string, error) {
+func (c *crawler) CrawlWeb() ([]string, error) {
 	if len(c.visitedUrl) > 0 {
 		return c.getUrls(), nil
 	}
@@ -38,7 +38,7 @@ func (c *Crawler) CrawlWeb() ([]string, error) {
 }
 
 // crawlWeb crawls urls that concretely will visit every reachable same-domain url
-func (c *Crawler) crawlWeb(url string, depth int) {
+func (c *crawler) crawlWeb(url string, depth int) {
 	if depth > c.maxDepth {
 		c.wg.Done()
 		return
@@ -79,7 +79,7 @@ func (c *Crawler) crawlWeb(url string, depth int) {
 }
 
 // getUrls returns a slice of the visited urls
-func (c *Crawler) getUrls() []string {
+func (c *crawler) getUrls() []string {
 	result := []string{}
 	for k := range c.visitedUrl {
 		result = append(result, k)
@@ -112,7 +112,7 @@ func getHostname(text string) string {
 
 // GetSameDomainUrls visits every URL with the same domain that is found within the HTML webpage and returns the visited URLs
 func GetSameDomainUrls(url string, maxDepth int) ([]string, error) {
-	crawler := &Crawler{
+	crawler := &crawler{
 		visitedUrl: make(map[string]struct{}),
 		maxDepth:   maxDepth,
 		rootUrl:    appendDefaultProtocol(url, &url),
