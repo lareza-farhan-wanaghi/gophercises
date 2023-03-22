@@ -16,7 +16,7 @@ Solution for the 1st exercise. Activities involved: making several functions to 
 
 **2. urlshort**
 
-Solution for the 2nd exercise. Activities involved: making a simple HTTP listener & its handlers, which can also establish a database connection, and creating functions to read & parse JSON/YAML files. [Learn more](https://github.com/gophercises/urlshort)
+Solution for the 2nd exercise. Activities involved: making a simple HTTP listener & its handlers, which can also establish a Postgres database connection, and creating functions to read & parse JSON/YAML files. [Learn more](https://github.com/gophercises/urlshort)
 
 
 **3. cyoa**
@@ -41,4 +41,4 @@ Solution for the 6th exercise. Activities involved: creating solutions for the c
 
 **6. task**
 
-Solution for the 7th exercise. Activities involved: creating a CLI program with cobra library that interacts with a boltDB database. [Learn more](https://github.com/gophercises/hr1)
+Solution for the 7th exercise. Activities involved: creating a CLI to-do task manager program with cobra library that stores and retrieve data in a boltDB database. [Learn more](https://github.com/gophercises/task)
