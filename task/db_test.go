@@ -175,7 +175,7 @@ func batchDoTask(indexOfN int, splits []string) (int, error) {
 	return indexOfN + 1 + m, nil
 }
 
-// batchDeleteTask deletes several tasks based on the splits. Reusable helper function to setup a test
+// batchDeleteTask deletes several tasks based on the splits. Reusable helper function to setup the test
 func batchDeleteTask(indexOfN int, splits []string) (int, error) {
 	m, err := strconv.Atoi(splits[indexOfN])
 	if err != nil {
@@ -195,7 +195,7 @@ func batchDeleteTask(indexOfN int, splits []string) (int, error) {
 	return indexOfN + 1 + m, nil
 }
 
-// compareCompletedTasks compares stored completed tasks and the data from the splits. Reusable helper function to setup a test
+// compareCompletedTasks compares stored completed tasks and the data from the splits. Reusable helper function to setup the test
 func compareCompletedTasks(indexOfN int, splits []string) (int, error) {
 	m, err := strconv.Atoi(splits[indexOfN])
 	if err != nil {
@@ -219,7 +219,7 @@ func compareCompletedTasks(indexOfN int, splits []string) (int, error) {
 	return indexOfN + 1 + m, nil
 }
 
-// compareActiveTasks compares stored active tasks and the data from the splits. Reusable helper function to setup a test
+// compareActiveTasks compares stored active tasks and the data from the splits. Reusable helper function to setup the test
 func compareActiveTasks(indexOfN int, splits []string) (int, error) {
 	m, err := strconv.Atoi(splits[indexOfN])
 	if err != nil {

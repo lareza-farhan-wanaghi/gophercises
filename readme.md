@@ -42,3 +42,8 @@ Solution for the 6th exercise. Activities involved: creating solutions for the c
 **7. task**
 
 Solution for the 7th exercise. Activities involved: creating a CLI to-do task manager program with cobra library that stores and retrieve data in a boltDB database. [Learn more](https://github.com/gophercises/task)
+
+
+**8. phone**
+
+Solution for the 8th exercise. Activities involved: creating more robust functions to interact with a PostgreSQL database, which does queries and alters a table, and a program to normalize phone number data. [Learn more](https://github.com/gophercises/phone)
