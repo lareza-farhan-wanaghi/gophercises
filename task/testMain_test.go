@@ -50,12 +50,12 @@ func (tt *TestTable) populateDeleteTask() {
 	tt.deleteTask = testCases
 }
 
-// populateDoTask populates test cases for the doTask function of the taskDatabase struct
+// populateDoTask populates test cases for the doTask function of the taskDatabase struct.
 func (tt *TestTable) populateComplexTask() {
 	testCases := make(map[string]string)
 	testCases["1,cleaning rooms,1,0,0"] = "1,cleaning rooms,0"
 	testCases["3,x,y,z,1,1,0"] = "1,y,2,x,z"
-	testCases["1,x,0,1,1"] = "0,0"
+	testCases["1,x,0,1,0"] = "0,0"
 	testCases["5,v,w,x,y,z,2,2,2,1,1"] = "2,x,y,2,v,z"
 	testCases["5,v,w,x,y,z,2,1,2,0"] = "2,w,y,3,v,x,z"
 	testCases["5,v,w,x,y,z,2,-1,2,0"] = "1,x,4,v,w,y,z"

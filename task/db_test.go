@@ -1,6 +1,7 @@
 package task
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 	"testing"
@@ -12,13 +13,13 @@ func TestAddTask(t *testing.T) {
 		for _, taskTitle := range strings.Split(k, ",") {
 			err := taskDb.addTask(taskTitle)
 			if err != nil {
-				t.Fatal(err)
+				t.Fatalf("%v. k: %s, v:%s", err, k, v)
 			}
 		}
 
 		data, err := taskDb.listTask()
 		if err != nil {
-			t.Fatal(err)
+			t.Fatalf("%v. k: %s, v:%s", err, k, v)
 		}
 
 		expectedData := strings.Split(v, ",")
@@ -30,7 +31,7 @@ func TestAddTask(t *testing.T) {
 
 		err = taskDb.flushDb()
 		if err != nil {
-			t.Fatal(err)
+			t.Fatalf("%v. k: %s, v:%s", err, k, v)
 		}
 	}
 }
@@ -39,26 +40,19 @@ func TestAddTask(t *testing.T) {
 func TestDoTask(t *testing.T) {
 	for k, v := range testTable.doTask {
 		splits := strings.Split(k, ",")
-		m, err := strconv.Atoi(splits[0])
+		nextIndex, err := batchAddTask(0, splits)
 		if err != nil {
-			t.Fatal(err)
+			t.Fatalf("%v. k: %s, v:%s", err, k, v)
 		}
 
-		for i := 0; i < m; i++ {
-			err = taskDb.addTask(splits[i+1])
-			if err != nil {
-				t.Fatal(err)
-			}
-		}
-
-		j, err := strconv.Atoi(splits[m+1])
+		j, err := strconv.Atoi(splits[nextIndex])
 		if err != nil {
-			t.Fatal(err)
+			t.Fatalf("%v. k: %s, v:%s", err, k, v)
 		}
 
 		data, err := taskDb.doTask(j)
 		if err != nil {
-			t.Fatal(err)
+			t.Fatalf("%v. k: %s, v:%s", err, k, v)
 		}
 
 		if data == nil {
@@ -80,26 +74,19 @@ func TestDoTask(t *testing.T) {
 func TestDeleteTask(t *testing.T) {
 	for k, v := range testTable.deleteTask {
 		splits := strings.Split(k, ",")
-		m, err := strconv.Atoi(splits[0])
+		nextIndex, err := batchAddTask(0, splits)
 		if err != nil {
-			t.Fatal(err)
+			t.Fatalf("%v. k: %s, v:%s", err, k, v)
 		}
 
-		for i := 0; i < m; i++ {
-			err = taskDb.addTask(splits[i+1])
-			if err != nil {
-				t.Fatal(err)
-			}
-		}
-
-		j, err := strconv.Atoi(splits[m+1])
+		j, err := strconv.Atoi(splits[nextIndex])
 		if err != nil {
-			t.Fatal(err)
+			t.Fatalf("%v. k: %s, v:%s", err, k, v)
 		}
 
 		data, err := taskDb.deleteTask(j)
 		if err != nil {
-			t.Fatal(err)
+			t.Fatalf("%v. k: %s, v:%s", err, k, v)
 		}
 
 		if data == nil {
@@ -112,7 +99,7 @@ func TestDeleteTask(t *testing.T) {
 
 		err = taskDb.flushDb()
 		if err != nil {
-			t.Fatal(err)
+			t.Fatalf("%v. k: %s, v:%s", err, k, v)
 		}
 	}
 }
@@ -120,82 +107,138 @@ func TestDeleteTask(t *testing.T) {
 // TestComplexTask tests the all db interaction functions of the taskDatabase struct
 func TestComplexTask(t *testing.T) {
 	for k, v := range testTable.complexTask {
-		var err error
-		c := 0
-		m := 0
-
-		for _, split := range strings.Split(k, ",") {
-			if m == 0 {
-				m, err = strconv.Atoi(split)
-				if err != nil {
-					t.Fatal(err)
-				}
-				c += 1
-			} else {
-				if c == 1 {
-					err = taskDb.addTask(split)
-					if err != nil {
-						t.Fatal(err)
-					}
-				} else if c == 2 {
-					j, err := strconv.Atoi(split)
-					if err != nil {
-						t.Fatal(err)
-					}
-
-					_, err = taskDb.doTask(j)
-					if err != nil {
-						t.Fatal(err)
-					}
-				} else {
-					j, err := strconv.Atoi(split)
-					if err != nil {
-						t.Fatal(err)
-					}
-
-					_, err = taskDb.deleteTask(j)
-					if err != nil {
-						t.Fatal(err)
-					}
-				}
-				m -= 1
-			}
+		splits := strings.Split(k, ",")
+		nextIndex, err := batchAddTask(0, splits)
+		if err != nil {
+			t.Fatalf("%v. k: %s, v:%s", err, k, v)
+		}
+		nextIndex, err = batchDoTask(nextIndex, splits)
+		if err != nil {
+			t.Fatalf("%v. k: %s, v:%s", err, k, v)
 		}
 
-		c = 0
-		m = 0
-		var data []taskModel
+		_, err = batchDeleteTask(nextIndex, splits)
+		if err != nil {
+			t.Fatalf("%v. k: %s, v:%s", err, k, v)
+		}
 
-		for _, split := range strings.Split(v, ",") {
-			if m == 0 {
-				m, err = strconv.Atoi(split)
-				if err != nil {
-					t.Fatal(err)
-				}
-				c += 1
-				if c == 1 {
-					data, err = taskDb.completedTask()
-					if err != nil {
-						t.Fatal(err)
-					}
-
-				} else {
-					data, err = taskDb.listTask()
-					if err != nil {
-						t.Fatal(err)
-					}
-				}
-			} else {
-				if data[len(data)-m].Title != split {
-					t.Fatalf("expected %s but got %s. in: %s, out: %s", split, data[m-len(data)].Title, k, v)
-				}
-				m -= 1
-			}
+		splits = strings.Split(v, ",")
+		nextIndex, err = compareCompletedTasks(0, splits)
+		if err != nil {
+			t.Fatalf("%v. k: %s, v:%s", err, k, v)
+		}
+		_, err = compareActiveTasks(nextIndex, splits)
+		if err != nil {
+			t.Fatalf("%v. k: %s, v:%s", err, k, v)
 		}
 
 		err = taskDb.flushDb()
 		if err != nil {
-			t.Fatal(err)
+			t.Fatalf("%v. k: %s, v:%s", err, k, v)
 		}
 	}
+}
+
+// batchAddTask adds several tasks based on the splits. Reusable helper function to setup a test
+func batchAddTask(indexOfN int, splits []string) (int, error) {
+	m, err := strconv.Atoi(splits[indexOfN])
+	if err != nil {
+		return -1, err
+	}
+
+	for i := 0; i < m; i++ {
+		err = taskDb.addTask(splits[indexOfN+1+i])
+		if err != nil {
+			return -1, err
+		}
+	}
+	return indexOfN + 1 + m, nil
+}
+
+// batchDoTask marks several tasks as completed based on the splits. Reusable helper function to setup a test
+func batchDoTask(indexOfN int, splits []string) (int, error) {
+	m, err := strconv.Atoi(splits[indexOfN])
+	if err != nil {
+		return -1, err
+	}
+
+	for i := 0; i < m; i++ {
+		id, err := strconv.Atoi(splits[indexOfN+1+i])
+		if err != nil {
+			return -1, err
+		}
+		_, err = taskDb.doTask(id)
+		if err != nil {
+			return -1, err
+		}
+	}
+	return indexOfN + 1 + m, nil
+}
+
+// batchDeleteTask deletes several tasks based on the splits. Reusable helper function to setup a test
+func batchDeleteTask(indexOfN int, splits []string) (int, error) {
+	m, err := strconv.Atoi(splits[indexOfN])
+	if err != nil {
+		return -1, err
+	}
+
+	for i := 0; i < m; i++ {
+		id, err := strconv.Atoi(splits[indexOfN+1+i])
+		if err != nil {
+			return -1, err
+		}
+		_, err = taskDb.deleteTask(id)
+		if err != nil {
+			return -1, err
+		}
+	}
+	return indexOfN + 1 + m, nil
+}
+
+// compareCompletedTasks compares stored completed tasks and the data from the splits. Reusable helper function to setup a test
+func compareCompletedTasks(indexOfN int, splits []string) (int, error) {
+	m, err := strconv.Atoi(splits[indexOfN])
+	if err != nil {
+		return -1, err
+	}
+
+	data, err := taskDb.completedTask()
+	if err != nil {
+		return -1, err
+	}
+
+	if len(data) != m {
+		return -1, fmt.Errorf("expected %d datas but only got %d datas", m, len(data))
+	}
+
+	for i := 0; i < m; i++ {
+		if data[i].Title != splits[indexOfN+1+i] {
+			return -1, fmt.Errorf("expected %s but got %s.", splits[indexOfN+1+i], data[i].Title)
+		}
+	}
+	return indexOfN + 1 + m, nil
+}
+
+// compareActiveTasks compares stored active tasks and the data from the splits. Reusable helper function to setup a test
+func compareActiveTasks(indexOfN int, splits []string) (int, error) {
+	m, err := strconv.Atoi(splits[indexOfN])
+	if err != nil {
+		return -1, err
+	}
+
+	data, err := taskDb.listTask()
+	if err != nil {
+		return -1, err
+	}
+
+	if len(data) != m {
+		return -1, fmt.Errorf("expected %d datas but got %d datas", m, len(data))
+	}
+
+	for i := 0; i < m; i++ {
+		if data[i].Title != splits[indexOfN+1+i] {
+			return -1, fmt.Errorf("expected %s but got %s.", splits[indexOfN+1+i], data[i].Title)
+		}
+	}
+	return indexOfN + 1 + m, nil
 }
