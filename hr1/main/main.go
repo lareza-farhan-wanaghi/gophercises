@@ -7,6 +7,7 @@ import (
 	"github.com/lareza-farhan-wanaghi/gophercises/hr1"
 )
 
+// main provides the entry point of the app
 func main() {
 	textFlag := flag.String("t", "camelCase", "Specifies the text that will be inspected")
 	offsiteFlag := flag.Int("o", 2, "Specifies the offsite that will be used in the caesar chipper encryption")

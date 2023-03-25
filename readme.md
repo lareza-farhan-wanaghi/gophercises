@@ -47,3 +47,8 @@ Solution for the 7th exercise. Activities involved: creating a CLI to-do task ma
 **8. phone**
 
 Solution for the 8th exercise. Activities involved: creating more robust functions to interact with a PostgreSQL database, which does queries and alters a table, and a program to normalize phone number data. [Learn more](https://github.com/gophercises/phone)
+
+
+**9. deck**
+
+Solution for the 9th exercise. Activities involved: creating structs and functions to simulate objects in a card game, making a function that applies the functional-ops coding pattern, and using stringer with go-generate to work with enum-like objects. [Learn more](https://github.com/gophercises/phone)
