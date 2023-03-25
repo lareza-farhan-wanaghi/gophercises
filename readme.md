@@ -51,4 +51,4 @@ Solution for the 8th exercise. Activities involved: creating more robust functio
 
 **9. deck**
 
-Solution for the 9th exercise. Activities involved: creating structs and functions to simulate objects in a card game, making a function that applies the functional-ops coding pattern, and using stringer with go-generate to work with enum-like objects. [Learn more](https://github.com/gophercises/phone)
+Solution for the 9th exercise. Activities involved: creating structs and functions to simulate items in a card game, making a function that applies the functional-ops coding pattern, and using stringer with go-generate to work with enum-like data types. [Learn more](https://github.com/gophercises/phone)
