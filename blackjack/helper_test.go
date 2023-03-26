@@ -10,7 +10,7 @@ import (
 
 // TestRateCardsHasAce tests the rateCardsHasAce function
 func TestRateCardsHasAce(t *testing.T) {
-	for k, v := range testTable.retrieveCard {
+	for k, v := range testTable.rateCardsHasAce {
 		cards := []*deck.Card{}
 		for _, s := range strings.Split(k, ",") {
 			id, err := strconv.Atoi(s)
@@ -28,17 +28,17 @@ func TestRateCardsHasAce(t *testing.T) {
 		}
 
 		if score != expectedScore {
-			t.Fatalf("expected %d but got %d", expectedScore, score)
+			t.Fatalf("expected %d but got %d. k: %s v:%s", expectedScore, score, k, v)
 		}
 
-		boolInt, err := strconv.Atoi(splits[0])
+		boolInt, err := strconv.Atoi(splits[1])
 		if err != nil {
 			t.Fatal(err)
 		}
 		expectedHasAce := boolInt == 1
 
 		if hasAce != expectedHasAce {
-			t.Fatalf("expected %v but got %v", expectedHasAce, hasAce)
+			t.Fatalf("expected %v but got %v. k: %s v: %s", expectedHasAce, hasAce, k, v)
 		}
 	}
 }
