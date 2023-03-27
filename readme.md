@@ -56,4 +56,9 @@ Solution for the 9th exercise. Activities involved: creating structs and functio
 
 **10. blackjacks**
 
-Solution for the 10th exercise. Activities involved: creating a CLI program simulating a blackjack game and making use of the interface data structure. [Learn more](https://github.com/gophercises/blackjack)
+Solution for the 10th and 11th exercises. Activities involved: creating a CLI program simulating a blackjack game and making use of the interface data structure to generalize the AI behavior algorithms. [Learn more about the 10th exercise](https://github.com/gophercises/blackjack) [Learn more about the 11th exercise](https://github.com/gophercises/blackjack_ai)
+
+
+**11. renamer**
+
+Solution for the 12th exercise. Activities involved: Creating functions that will traverse a directory recursively and rename files in that directory (and its subdirectory) that match a pattern specified to follow a given naming pattern. [Learn more](https://github.com/gophercises/renamer)
