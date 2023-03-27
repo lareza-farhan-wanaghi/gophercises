@@ -16,17 +16,17 @@ type Player struct {
 
 // enterPhase handles every phase of the game
 func (p *Player) enterPhase(gm *GameManager, args ...interface{}) {
-	printfDelay("\n### %s's Turn ###\n", dt_fast, p.Name)
+	printfDelay("\n### %s's Turn ###\n", pd_fast, p.Name)
 
 	score := rateCards(p.cards...)
-	printfDelay("Current cards are %s, and the score is %d\n", dt_fast, cardString(p.cards...), score)
+	printfDelay("Current cards are %s, and the score is %d\n", pd_fast, cardString(p.cards...), score)
 
 	if p.IsActive {
 		input := bufio.NewScanner(os.Stdin)
 		for {
-			printfDelay("Please press one of the options below to continue:\n", dt_fast)
-			printfDelay("1. Hit\n", dt_fast)
-			printfDelay("2. Stand\n", dt_fast)
+			printfDelay("Please press one of the options below to continue:\n", pd_fast)
+			printfDelay("1. Hit\n", pd_fast)
+			printfDelay("2. Stand\n", pd_fast)
 			input.Scan()
 			inputVal := input.Text()
 			if inputVal == "1" {
@@ -36,7 +36,7 @@ func (p *Player) enterPhase(gm *GameManager, args ...interface{}) {
 				p.stand()
 				break
 			} else {
-				printfDelay("You entered an invalid option\n", dt_fast)
+				printfDelay("You entered an invalid option\n", pd_fast)
 			}
 		}
 	} else {
@@ -49,18 +49,18 @@ func (p *Player) enterPhase(gm *GameManager, args ...interface{}) {
 		}
 	}
 
-	printfDelay("### %s's End Turn\n", dt_long, p.Name)
+	printfDelay("### %s's End Turn\n", pd_long, p.Name)
 }
 
 // hit simulates the hit action of the game, which accepts the card offer
 func (p *Player) hit(gm *GameManager) {
-	printfDelay("%s chose to hit\n", dt_long, p.Name)
+	printfDelay("%s chose to hit\n", pd_long, p.Name)
 	gm.retrieveCard(p.id)
 }
 
 // hit simulates the stand action of the game, which rejects the card offer
 func (p *Player) stand() {
-	printfDelay("%s chose to stand\n", dt_long, p.Name)
+	printfDelay("%s chose to stand\n", pd_long, p.Name)
 }
 
 // addCard adds the card to the list of the current cards held
@@ -68,7 +68,7 @@ func (p *Player) addCard(gm *GameManager, card *deck.Card) {
 	p.cards = append(p.cards, card)
 	score := rateCards(p.cards...)
 
-	printfDelay("%s added a card, it's %s. Current score is %d\n", dt_fast, p.string(), card.Name, score)
+	printfDelay("%s added a card, it's %s. Current score is %d\n", pd_fast, p.string(), card.Name, score)
 	if score == 21 {
 		gm.instantWin(p.id)
 	} else if score > 21 {

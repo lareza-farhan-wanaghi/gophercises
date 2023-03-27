@@ -1,6 +1,7 @@
 package blackjack
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 	"testing"
@@ -8,7 +9,7 @@ import (
 	"github.com/lareza-farhan-wanaghi/gophercises/deck"
 )
 
-// TestRetrieveCard tests the retrieveCard function of the mainGame struct
+// TestRetrieveCard tests the retrieveCard function of the gameManager struct
 func TestRetrieveCard(t *testing.T) {
 	for k, v := range testTable.retrieveCard {
 		splits := strings.Split(k, ",")
@@ -22,8 +23,7 @@ func TestRetrieveCard(t *testing.T) {
 			t.Fatal(err)
 		}
 
-		gm := NewGameManager()
-		gm.cards = cards
+		gm := NewGameManager(cards)
 		for i := 0; i < numOfRetrieving; i++ {
 			gm.retrieveCard(0)
 		}
@@ -73,6 +73,54 @@ func TestRetrieveCard(t *testing.T) {
 				}
 				c = ""
 			}
+		}
+	}
+}
+
+// TestStartRound tests the startRound function of the gameManager struct
+func TestStartRound(t *testing.T) {
+	for k, v := range testTable.startRound {
+		splits := strings.Split(k, ",")
+		numOfPlayer, err := strconv.Atoi(splits[0])
+		if err != nil {
+			t.Fatal(err)
+		}
+
+		players := []*Player{}
+		for i := 0; i < numOfPlayer; i++ {
+			players = append(players, &Player{Name: fmt.Sprintf("p%d", i), IsActive: false})
+		}
+
+		cards := []*deck.Card{}
+		for i := 1; i < len(splits); i++ {
+			id, err := strconv.Atoi(splits[i])
+			if err != nil {
+				t.Fatal(err)
+			}
+			cards = append(cards, &deck.Card{Id: id})
+		}
+
+		gm := NewGameManager(cards, players...)
+		gm.startRound()
+
+		splits = strings.Split(v, ",")
+		expectedId, err := strconv.Atoi(splits[0])
+		if err != nil {
+			t.Fatal(err)
+		}
+
+		if gm.winner != expectedId {
+			t.Fatalf("expected %v but got %v. k: %s v: %s", expectedId, gm.winner, k, v)
+		}
+
+		expectedScore, err := strconv.Atoi(splits[1])
+		if err != nil {
+			t.Fatal(err)
+		}
+
+		score := rateCards(gm.entities[gm.winner].getCards()...)
+		if score != expectedScore {
+			t.Fatalf("expected %v but got %v. k: %s v: %s", expectedScore, score, k, v)
 		}
 	}
 }

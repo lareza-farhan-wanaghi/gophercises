@@ -1,6 +1,9 @@
 package main
 
-import "github.com/lareza-farhan-wanaghi/gophercises/blackjack"
+import (
+	"github.com/lareza-farhan-wanaghi/gophercises/blackjack"
+	"github.com/lareza-farhan-wanaghi/gophercises/deck"
+)
 
 // main provides the entry point of the app
 func main() {
@@ -8,6 +11,6 @@ func main() {
 		{Name: "Farhan", IsActive: true},
 		{Name: "Comp", IsActive: false},
 	}
-	gm := blackjack.NewGameManager(players...)
+	gm := blackjack.NewGameManager(deck.NewSuitDeck(deck.Shuffle()), players...)
 	gm.Play()
 }

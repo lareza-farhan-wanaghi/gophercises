@@ -53,11 +53,17 @@ func cardString(cards ...*deck.Card) string {
 	return sb.String()
 }
 
-const dt_fast = 100
-const dt_long = 1000
+const pd_fast = 100
+const pd_long = 1000
+
+var pd_TurnedOff bool
 
 // printfDelay prints the string and sleeps the program for the given time afterward
 func printfDelay(format string, delayTime int, args ...any) {
+	if pd_TurnedOff {
+		return
+	}
+
 	fmt.Printf(format, args...)
 	time.Sleep(time.Duration(delayTime) * time.Millisecond)
 }
