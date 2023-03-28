@@ -67,3 +67,8 @@ Solution for the 12th exercise. Activities involved: Creating functions that wil
 **12. quiet_hn**
 
 Solution for the 13th exercise. Activities involved: Creating functions that concurrently retrieve data from an API and order back the returned data to follow the original ordering positions, using a wait-group and channel. [Learn more](https://github.com/gophercises/quiet_hn)
+
+
+**13. recover**
+
+Solution for the 14th exercise. Activities involved: Creating functions that simulate a panic-recover event in a webserver. [Learn more](https://github.com/gophercises/quiet_hn)
