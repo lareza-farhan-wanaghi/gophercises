@@ -62,3 +62,8 @@ Solution for the 10th and 11th exercises. Activities involved: creating a CLI pr
 **11. renamer**
 
 Solution for the 12th exercise. Activities involved: Creating functions that will traverse a directory recursively and rename files in that directory (and its subdirectory) that match a pattern specified to follow a given naming pattern. [Learn more](https://github.com/gophercises/renamer)
+
+
+**12. quiet_hn**
+
+Solution for the 13th exercise. Activities involved: Creating functions that concurrently retrieve data from an API and order back the returned data to follow the original ordering positions, using a wait-group and channel. [Learn more](https://github.com/gophercises/quiet_hn)
