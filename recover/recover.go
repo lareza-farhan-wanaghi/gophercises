@@ -2,35 +2,59 @@ package recover
 
 import (
 	"fmt"
-	"log"
+	"io"
 	"net/http"
+	"regexp"
+	"runtime/debug"
+
+	"github.com/alecthomas/chroma"
+	"github.com/alecthomas/chroma/formatters/html"
+	"github.com/alecthomas/chroma/lexers"
+	"github.com/alecthomas/chroma/styles"
 )
 
 // generalPanicRecovery recovers panic stats of the web server by hijacking the connection
 func generalPanicRecovery(w http.ResponseWriter, r *http.Request) {
 	if err := recover(); err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
-		fmt.Fprintf(w, "Something went wrong")
+		if isDevServer {
+			trace := string(debug.Stack())
+			linkedTrace := fmt.Sprintf("<body><p style='white-space:pre'>%s\n%s</p></body>", err, parseTrace(trace))
+			fmt.Fprintln(w, linkedTrace)
+		} else {
+			fmt.Fprintf(w, "Something went wrong")
+		}
 	}
 }
 
-// homeHandler handles the root url
-func homeHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello!")
+// parseTrace finds raw source code links and turns them into tags linking to the source codes
+func parseTrace(trace string) string {
+	re := regexp.MustCompile(`((\/[^\s]+):([0-9]+).*)`)
+	result := re.ReplaceAllString(trace, "<a href='/debug${2}?id=${3}'>${1}</a>")
+
+	return result
 }
 
-// homeHandler handles the panic url, which triggers panic in the web server
-func panicHandler(w http.ResponseWriter, r *http.Request) {
-	defer generalPanicRecovery(w, r)
-	panic("Oh no!")
-}
+// hightlightGoCode formats the string with the chroma syntax highlighting and writes it to the writer
+func hightlightGoCode(w io.Writer, code string, highlightLines ...[2]int) error {
+	lexer := lexers.Get("go")
+	if lexer == nil {
+		return fmt.Errorf("error while highlighting")
+	}
+	lexer = chroma.Coalesce(lexer)
 
-// RunWebserver runs the web server simulating panic recovery
-func RunWebserver() {
-	mux := http.NewServeMux()
-	mux.HandleFunc("/panic/", panicHandler)
-	mux.HandleFunc("/", homeHandler)
+	style := styles.Get("base16-snazzy")
+	if style == nil {
+		return fmt.Errorf("error while highlighting")
+	}
 
-	log.Printf("Stating a web server on port 3000")
-	http.ListenAndServe(":3000", mux)
+	iterator, err := lexer.Tokenise(nil, code)
+	if err != nil {
+		return err
+	}
+
+	formatter := html.New(html.Standalone(true), html.WithClasses(true), html.HighlightLines(highlightLines))
+	err = formatter.Format(w, style, iterator)
+
+	return err
 }

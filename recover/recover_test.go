@@ -49,3 +49,28 @@ func TestGetRequest(t *testing.T) {
 		}
 	}
 }
+
+// TestParseTrace tests the parseTrace function
+func TestParseTrace(t *testing.T) {
+	for k, v := range testTable.parseTrace {
+		linkedTrace := parseTrace(k)
+		if len(linkedTrace) != len(v) {
+			t.Fatalf("expected len %d but got %d. k: %s v: %s", len(v), len(linkedTrace), k, v)
+		}
+
+		if linkedTrace != v {
+			t.Logf("%s", getUnmatch(linkedTrace, v))
+			t.Fatalf("expected %s but got %s. k: %s v: %s", v, linkedTrace, k, v)
+		}
+	}
+}
+
+// helps debug unmatch strings by returning the first string starting from the index of the non-matching character
+func getUnmatch(a, b string) string {
+	for i := 0; i < len(a); i++ {
+		if a[i] != b[i] {
+			return a[i:]
+		}
+	}
+	return ""
+}

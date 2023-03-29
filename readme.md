@@ -71,4 +71,4 @@ Solution for the 13th exercise. Activities involved: Creating functions that con
 
 **13. recover**
 
-Solution for the 14th exercise. Activities involved: Creating functions that simulate a panic-recover event in a webserver. [Learn more](https://github.com/gophercises/quiet_hn)
+Solution for the 14th and 15th exercises. Activities involved: Creating functions that simulate a panic-recovery event in a web server and show its stack tracks and making use of the Chroma syntax-highlighting library to show a syntax-highlighted source code on the browser. [Learn more about the 14th exercise](https://github.com/gophercises/recover) [Learn more about the 15th exercise](https://github.com/gophercises/recover_chroma)
