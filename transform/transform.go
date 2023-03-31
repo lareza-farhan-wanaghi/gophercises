@@ -6,6 +6,7 @@ import (
 	"strconv"
 )
 
+// Primitive executes primitive CLI that will produce primitive-shape-brushed images from the file corresponding to the in path to the out path
 func Primitive(in, out string, mode, n int) error {
 	path, err := exec.LookPath("primitive")
 	if err != nil {

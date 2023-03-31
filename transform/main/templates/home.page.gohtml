@@ -6,12 +6,13 @@
 
 {{define "content"}}
     <h2 class="mt-5" id="title">
-        HOME
+        SAMPLE APP
     </h2>
+    <p>Given an image, this app will then return the image brushed with primitive shapes.</p>
     <img class="mb-3"src="" height="150" alt=" " id="demo_image"/>
     <form action="" id="upload_image" autocomplete="off" novalidate="">
         <div class="mb-2">
-            <h6>Please select an image:</h6>
+            <h5>Select a less than 500MB image:</h5>
         </div>
         <div class="mb-3">
             <input required="" type="file" id="upload_image_file" name="upload_image_file" accept="image/*" onchange="showDemoImage()">
@@ -30,7 +31,7 @@
     </form>
     <div class="container p-0 mb-3 d-none" id="download_image">
         <div class="mb-2">
-            <h6>Download your favorite images!</h6>
+            <h5>Download your favorite images!</h5>
         </div>
         <div id="download_image_row" class="row row-cols-3 g-3" >
         </div>
@@ -111,7 +112,7 @@ function showDownloadImage(payload) {
                     <p class="d-inline">${i+1}. ${data[i].name}</p>
                 </div>
                 <div class="w-100">
-                    <img class="w-100" src="data:image/png;base64,${data[i].image}" alt="mode" />
+                    <img class="w-100" src="data:image/png;base64,${data[i].image}" />
                 </div>
                 <div class="w-100 text-center">
                     <a class="btn btn-primary mt-3" href="data:image/png;base64,${data[i].image}" download>
@@ -146,13 +147,14 @@ function submitUploadImage() {
     fetch(`${API}/api/sample-modes`, requestOptions)
         .then(response => response.json())
         .then(response => {
+            if (response.error) {
+                return Promise.reject(new Error(response.data));
+            }
             toggleProcessingIcon(false);
             showChooseModeForm(response)
         })
         .catch(err=> {
-            console.log("err");
-            console.log(err)
-            toggleProcessingIcon(false);
+            alert(err)
             location.reload()
         })
 }
@@ -182,13 +184,14 @@ function submitChoosMode(){
     fetch(`${API}/api/sample-ns?m=${mode}`, requestOptions)
         .then(response => response.json())
         .then(response => {
+            if (response.error) {
+                return Promise.reject(new Error(response.data));
+            }
             toggleProcessingIcon(false);
             showDownloadImage(response)
         })
         .catch(err=> {
-            console.log("err");
-            console.log(err)
-            toggleProcessingIcon(false);
+            alert(err)
             location.reload()
         })
 }

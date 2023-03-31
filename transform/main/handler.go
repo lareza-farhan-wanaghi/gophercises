@@ -19,7 +19,7 @@ func (app *application) HomeHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-// SampleModesHandler responds to the request by returning JSON data containing primitive-transformed images with different mode variables
+// SampleModesHandler responds to the request by returning JSON data containing primitive-shape-brushed images with different mode variables
 func (app *application) SampleModesHandler(w http.ResponseWriter, r *http.Request) {
 	err := r.ParseForm()
 	if err != nil {
@@ -70,7 +70,7 @@ func (app *application) SampleModesHandler(w http.ResponseWriter, r *http.Reques
 	app.writeJSON(w, http.StatusOK, payload{Error: false, Data: payloadData})
 }
 
-// SampleNsHandler responds to the request by returning JSON data containing primitive-transformed images with different n variables
+// SampleNsHandler responds to the request by returning JSON data containing primitive-shape-brushed images with different n variables
 func (app *application) SampleNsHandler(w http.ResponseWriter, r *http.Request) {
 	err := r.ParseForm()
 	if err != nil {
