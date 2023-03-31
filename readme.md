@@ -73,6 +73,12 @@ Solution for the 13th exercise. Activities involved: Creating functions that con
 
 Solution for the 14th and 15th exercises. Activities involved: Creating functions that simulate a panic-recovery event in a web server and show its stack tracks and making use of the Chroma syntax-highlighting library to show a syntax-highlighted source code on the browser. [Learn more about the 14th exercise](https://github.com/gophercises/recover) [Learn more about the 15th exercise](https://github.com/gophercises/recover_chroma)
 
+
 **14. secret**
 
 Solution for the 17th exercise. Activities involved: Making a CLI program to store and retrieve data from a file that is encrypted, which uses the stream reader and writer from the go's cipher library. [Learn more](https://github.com/gophercises/secret)
+
+
+**15. transform**
+
+Solution for the 18th exercise. Activities involved: Making a web app generating images from an image uploaded by the user, specifically, the APIs that process the uploaded image, which makes use of the exec library, and the front end that fetches the APIs. [Learn more](https://github.com/gophercises/transform)

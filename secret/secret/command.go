@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 
 	"github.com/lareza-farhan-wanaghi/gophercises/secret"
@@ -11,11 +12,10 @@ import (
 func init() {
 	rootCmd.AddCommand(getCmd)
 	rootCmd.AddCommand(setCmd)
+	rootCmd.AddCommand(listCmd)
 
-	getCmd.PersistentFlags().StringP("key", "k", "6368616e676520746869732070617373", "specifies the encoding key")
-	getCmd.PersistentFlags().StringP("filepath", "f", "./test", "specifies the filepath")
-	setCmd.PersistentFlags().StringP("key", "k", "6368616e676520746869732070617373", "specifies the encoding key")
-	setCmd.PersistentFlags().StringP("filepath", "f", "./test", "specifies the filepath")
+	rootCmd.PersistentFlags().StringP("key", "k", "6368616e676520746869732070617373", "specifies the encoding key")
+	rootCmd.PersistentFlags().StringP("filepath", "f", "./test", "specifies the filepath")
 }
 
 var rootCmd = &cobra.Command{
@@ -46,6 +46,35 @@ var getCmd = &cobra.Command{
 		}
 
 		fmt.Printf("%s\n", data)
+	},
+}
+
+var listCmd = &cobra.Command{
+	Use:   "list",
+	Short: "Get all data from the encrypted storage in the json format",
+	Run: func(cob *cobra.Command, args []string) {
+		key, err := cob.Flags().GetString("key")
+		if err != nil {
+			panic(err)
+		}
+
+		filepath, err := cob.Flags().GetString("filepath")
+		if err != nil {
+			panic(err)
+		}
+
+		fileFault := secret.FileFault(key, filepath)
+		data, err := fileFault.GetAll()
+		if err != nil {
+			panic(err)
+		}
+
+		jsonData, err := json.MarshalIndent(data, "", "  ")
+		if err != nil {
+			panic(err)
+		}
+
+		fmt.Printf("%s\n", string(jsonData))
 	},
 }
 
