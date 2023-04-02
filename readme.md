@@ -82,3 +82,8 @@ Solution for the 17th exercise. Activities involved: Making a CLI program to sto
 **15. transform**
 
 Solution for the 18th exercise. Activities involved: Making a web app generating images from an image uploaded by the user, specifically, the APIs that process the uploaded image, which makes use of the exec library, and the front end that fetches the APIs. [Learn more](https://github.com/gophercises/transform)
+
+
+**15. img**
+
+Solution for the 19th exercise. Activities involved: Making functions to draw chart bars on a png and SVG file, using the built-in image library and the svggo library. [Learn more](https://github.com/gophercises/image)
