@@ -1,4 +1,4 @@
-package cyoa
+package main
 
 import (
 	"embed"

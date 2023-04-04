@@ -17,8 +17,8 @@ type ArcOption struct {
 }
 
 // GetArcMap returns a map of arcs from the sample arc JSON file, "gopher.json"
-func GetArcMap() (map[string]Arc, error) {
-	jsn, err := ioutil.ReadFile("gopher.json")
+func GetArcMap(filename string) (map[string]Arc, error) {
+	jsn, err := ioutil.ReadFile(filename)
 	if err != nil {
 		return nil, err
 	}

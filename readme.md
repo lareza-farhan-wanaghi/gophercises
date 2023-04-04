@@ -35,7 +35,7 @@ To run the program:
 - Open a terminal session and go to the urlshort directory.<br/><br/>
 ![urlshort1](readme_images/urlshort1.png)
 
-- Execute the main.go file in the main folder to run the web server. (By default, the program will use the map on the pathyaml.yaml file to map its paths. You can use the f flag to specify the file or the d flag to specify a database address and use a database instead)<br/><br/>
+- Execute the main.go file in the main folder to run the web server. (By default, the program will use the map on the pathyaml.yaml file to map its paths. You can use the f flag to specify the file or the d flag to specify a database address and use that database instead)<br/><br/>
 ![urlshort2](readme_images/urlshort2.png)
 
 - Visit the web server by using a browser. For example, we will visit the /urlshort path, and the program will redirect us to https://github.com/gophercises/urlshort as specified in the path map file.<br/><br/>
@@ -45,8 +45,21 @@ To run the program:
 
 **3. cyoa**
 
-Solution for the [3rd](https://github.com/gophercises/cyoa) exercise. Activities involved: creating go template files & the functions to parse them and an HTTP handler that renders the parsed go templates.
+Solution for the [3rd](https://github.com/gophercises/cyoa) exercise. Activities involved: creating a web app simulating a CYOA (Choose Your Own Adventure) experience that makes a story based on options the user chooses.
 
+To run the program:
+- Open a terminal session and go to the cyoa directory.<br/><br/>
+![cyoa1](readme_images/cyoa1.png)
+
+- Execute the main.go file in the main directory to run the web app. (By default, the program will take the gopher.json to build the story tree. You can also use the f flag to specify the path of the file)<br/><br/>
+![cyoa2](readme_images/cyoa2.png)
+
+- Visit the root path of the web app on a browser (it will be redirected to the /intro path). In this example, we will choose some options (the ones in a darker color) to make up our story.<br/><br/>
+![cyoa3](readme_images/cyoa3.png)<br/><br/>
+![cyoa4](readme_images/cyoa4.png)<br/><br/>
+![cyoa5](readme_images/cyoa5.png)<br/><br/>
+![cyoa6](readme_images/cyoa6.png)<br/><br/>
+![cyoa7](readme_images/cyoa7.png)<br/><br/>
 
 **4. link**
 

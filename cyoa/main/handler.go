@@ -1,12 +1,14 @@
-package cyoa
+package main
 
 import (
 	"net/http"
+
+	"github.com/lareza-farhan-wanaghi/gophercises/cyoa"
 )
 
 // Default acts as a generic handler that handles every route
 func (app *application) Default(w http.ResponseWriter, r *http.Request) {
-	arc, ok := app.cache["arcmap"].(map[string]Arc)[r.URL.Path[1:]]
+	arc, ok := app.cache["arcmap"].(map[string]cyoa.Arc)[r.URL.Path[1:]]
 	if !ok {
 		http.Redirect(w, r, "intro", http.StatusSeeOther)
 		return
