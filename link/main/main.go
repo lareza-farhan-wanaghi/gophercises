@@ -1,7 +1,6 @@
 package main
 
 import (
-	"flag"
 	"fmt"
 	"os"
 
@@ -10,10 +9,7 @@ import (
 
 // main provides the entry point of the app
 func main() {
-	fileFlag := flag.String("f", "ex1.html", "Specifies the file containing the html")
-	flag.Parse()
-
-	reader, err := os.Open(*fileFlag)
+	reader, err := os.Open(os.Args[1])
 	if err != nil {
 		panic(err)
 	}

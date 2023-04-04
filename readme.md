@@ -17,7 +17,7 @@ To run the program:
 - Open a terminal session and go to the quiz directory.<br/><br/>
 ![quiz1](readme_images/quiz1.png)
 
-- Execute the main.go file in the main folder to run the program. (By default, the program will take the quiz question in the problem.csv file sequentially and have a duration of 30 seconds. You can use the s flag to shuffle the quiz questions and the t flag to set the duration)<br/><br/>
+- Execute the main.go file in the main folder to start the program. (By default, the program will take the quiz question in the problem.csv file sequentially and have a duration of 30 seconds. You can use the s flag to shuffle the quiz questions and the t flag to set the duration)<br/><br/>
 ![quiz2](readme_images/quiz2.png)
 
 - Answer the questions by passing numbers in the terminal.<br/><br/>
@@ -63,7 +63,14 @@ To run the program:
 
 **4. link**
 
-Solution for the [4th](https://github.com/gophercises/link) exercise. Activities involved: creating functions to parse an HTML file and collect the href values & inner texts of all "a" tags within the specified HTML file and starting to write test functions (which will keep doing in the upcoming exercise). 
+Solution for the [4th](https://github.com/gophercises/link) exercise. Activities involved: creating a program that parses an HTML file to collect links and texts from all of the "a" tags.
+
+ To run the program:
+- Open a terminal session and go to the link directory.<br/><br/>
+![link1](readme_images/link1.png)
+
+- Execute the main.go file in the main folder with one argument specifying the HTML file that will be parsed. In this example, we will use the demo.html file as the target HTML file.<br/><br/>
+![link2](readme_images/link2.png)
 
 
 **5. sitemap**
