@@ -1,19 +1,22 @@
 package main
 
 import (
-	"flag"
 	"fmt"
+	"os"
+	"strconv"
 
 	"github.com/lareza-farhan-wanaghi/gophercises/hr1"
 )
 
 // main provides the entry point of the app
 func main() {
-	textFlag := flag.String("t", "camelCase", "Specifies the text that will be inspected")
-	offsiteFlag := flag.Int("o", 2, "Specifies the offsite that will be used in the caesar chipper encryption")
-	flag.Parse()
+	textInput := os.Args[1]
+	offsiteInput, err := strconv.Atoi(os.Args[2])
+	if err != nil {
+		panic(err)
+	}
 
-	fmt.Printf("inputed text: '%s', CamelCase output: %d, CaesarChiper output: '%s'\n",
-		*textFlag, hr1.Camelcase(*textFlag), hr1.CaesarChiper(*textFlag, int32(*offsiteFlag)))
+	fmt.Printf("Input text: %s \nWord count: %d \nCaesar chiper result: %s\n",
+		textInput, hr1.Camelcase(textInput), hr1.CaesarChiper(textInput, int32(offsiteInput)))
 
 }

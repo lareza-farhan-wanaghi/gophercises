@@ -96,7 +96,19 @@ To run the program:
 
 **6. hr1**
 
-Solution for the [6th](https://github.com/gophercises/hr1) exercise. Activities involved: creating solutions for the caesarchiper and camelcase hacker rank problems, which play with the string and rune data types.
+Solution for the [6th](https://github.com/gophercises/hr1) exercise. Activities involved: creating solutions for Hackerrank's caesarchiper and camelcase problems and a program making use of those algorithms.
+
+To run the program:
+
+- Open a terminal session and go to the hr1 directory.<br/><br/>
+![hr1](readme_images/hr1.png)
+
+- Execute the main.go file in the main folder with exactly two arguments. The first argument specifies the text that will be encrypted with the Caesar-chipper encryption, and the second one is for the offset value for the encryption. As an example, we will run the program with "testTheProgram" as the target text and number one as the offset.<br/><br/>
+![hr2](readme_images/hr2.png)
+
+- And here's the Hackerrank result of the solution.<br/><br/>
+![hr3](readme_images/hr3.png)<br/><br/>
+![hr4](readme_images/hr4.png)
 
 
 **7. task**
