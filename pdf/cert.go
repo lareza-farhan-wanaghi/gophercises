@@ -2,6 +2,7 @@ package pdf
 
 import (
 	"fmt"
+	"path/filepath"
 	"time"
 
 	"github.com/jung-kurt/gofpdf"
@@ -104,6 +105,10 @@ func (c *certPDF) setBody(name string, date time.Time) {
 
 // Create creates the certificate pdf on the given filename
 func (c *certPDF) Create(filename string, name string, date time.Time) error {
+	if filepath.Ext(filename) != ".pdf" {
+		return fmt.Errorf("filename must be a file path with .pdf extension")
+	}
+
 	c.setCanvas()
 	c.setBorders()
 	c.setBody(name, date)

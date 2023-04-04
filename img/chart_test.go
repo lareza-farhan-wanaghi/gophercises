@@ -1,6 +1,8 @@
 package img
 
 import (
+	"errors"
+	"os"
 	"strconv"
 	"strings"
 	"testing"
@@ -78,6 +80,71 @@ func TestCalculatedHeight(t *testing.T) {
 
 		if expectedHeight != chart.height {
 			t.Fatalf("expected %d but got %d. k:%s v:%s", expectedHeight, chart.height, k, v)
+		}
+	}
+}
+
+// TestDrawSvg tests the DrawSvg function of the chart struct
+func TestDrawSvg(t *testing.T) {
+	for k, v := range testTable.drawSvg {
+		mockChartItems := []*ChartItem{
+			{Key: "1", Value: 1},
+			{Key: "2", Value: 2},
+			{Key: "3", Value: 3},
+		}
+		chart := NewChart(mockChartItems, 10, 10, 10, 10, 10)
+		err := chart.DrawSvg(k)
+
+		if v == "error" {
+			if err == nil {
+				t.Fatalf("expected an error but got nil. k:%s v:%s", k, v)
+			}
+			continue
+		}
+
+		if err != nil {
+			t.Fatal(err)
+		}
+
+		if _, err := os.Stat(v); errors.Is(err, os.ErrNotExist) {
+			t.Fatalf("expected a file with a path of %s. k:%s v:%s", v, k, v)
+		}
+
+		err = os.RemoveAll(v)
+		if err != nil {
+			t.Fatal(err)
+		}
+	}
+}
+
+// TestDrawPng tests the DrawPng function of the chart struct
+func TestDrawPng(t *testing.T) {
+	for k, v := range testTable.drawPng {
+		mockChartItems := []*ChartItem{
+			{Key: "1", Value: 1},
+			{Key: "2", Value: 2},
+			{Key: "3", Value: 3},
+		}
+		chart := NewChart(mockChartItems, 10, 10, 10, 10, 10)
+		err := chart.DrawPNG(k)
+		if v == "error" {
+			if err == nil {
+				t.Fatalf("expected an error but got nil. k:%s v:%s", k, v)
+			}
+			continue
+		}
+
+		if err != nil {
+			t.Fatal(err)
+		}
+
+		if _, err := os.Stat(v); errors.Is(err, os.ErrNotExist) {
+			t.Fatalf("expected a file with a path of %s. k:%s v:%s", v, k, v)
+		}
+
+		err = os.RemoveAll(v)
+		if err != nil {
+			t.Fatal(err)
 		}
 	}
 }

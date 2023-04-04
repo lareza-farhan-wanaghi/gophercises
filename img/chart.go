@@ -1,11 +1,13 @@
 package img
 
 import (
+	"fmt"
 	"image"
 	"image/color"
 	"image/png"
-	"io"
 	"math"
+	"os"
+	"path/filepath"
 	"strconv"
 
 	svg "github.com/ajstarks/svgo"
@@ -54,7 +56,17 @@ func (c *chart) calculateHeight() int {
 }
 
 // DrawPNG draws the chart int the png format
-func (c chart) DrawPNG(w io.Writer) error {
+func (c chart) DrawPNG(filename string) error {
+	if filepath.Ext(filename) != ".png" {
+		return fmt.Errorf("filename must be a png format file path")
+	}
+
+	w, err := os.OpenFile(filename, os.O_WRONLY|os.O_CREATE, 0777)
+	if err != nil {
+		panic(err)
+	}
+	defer w.Close()
+
 	upLeft := image.Point{0, 0}
 	lowRight := image.Point{c.width, c.height}
 
@@ -79,7 +91,17 @@ func (c chart) DrawPNG(w io.Writer) error {
 }
 
 // DrawSvg draws the chart in the svg format
-func (c chart) DrawSvg(w io.Writer) {
+func (c chart) DrawSvg(filename string) error {
+	if filepath.Ext(filename) != ".svg" {
+		return fmt.Errorf("filename must be an svg format file path")
+	}
+
+	w, err := os.OpenFile(filename, os.O_WRONLY|os.O_CREATE, 0777)
+	if err != nil {
+		panic(err)
+	}
+	defer w.Close()
+
 	canvas := svg.New(w)
 	cyan := canvas.RGB(100, 200, 200)
 	paddedHeight := c.height + 50
@@ -109,6 +131,8 @@ func (c chart) DrawSvg(w io.Writer) {
 	canvas.Line(left, bottom, left, 0, "stroke: rgb(150, 150, 150); stroke-width:2")
 	canvas.Line(left, bottom, paddedWidth, bottom, "stroke: rgb(150, 150, 150); stroke-width:2")
 	canvas.End()
+
+	return nil
 }
 
 // min returns the min value from the slice

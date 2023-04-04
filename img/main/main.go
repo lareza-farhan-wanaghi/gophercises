@@ -1,24 +1,13 @@
 package main
 
 import (
-	"os"
+	"fmt"
 
 	"github.com/lareza-farhan-wanaghi/gophercises/img"
 )
 
 // main provides the entry point of the app
 func main() {
-	pngFile, err := os.OpenFile("demo.png", os.O_WRONLY|os.O_CREATE, 0777)
-	if err != nil {
-		panic(err)
-	}
-	defer pngFile.Close()
-
-	svgFile, err := os.OpenFile("demo.svg", os.O_WRONLY|os.O_CREATE, 0777)
-	if err != nil {
-		panic(err)
-	}
-	defer svgFile.Close()
 
 	chartItems := []*img.ChartItem{
 		{Key: "Jan", Value: 50},
@@ -37,6 +26,12 @@ func main() {
 
 	chart := img.NewChart(chartItems, 50, 10, 25, 25, 5)
 
-	chart.DrawSvg(svgFile)
-	chart.DrawPNG(pngFile)
+	err := chart.DrawSvg("demo-svg.png")
+	if err != nil {
+		fmt.Println(err)
+	}
+	err = chart.DrawPNG("demo-png.svg")
+	if err != nil {
+		fmt.Println(err)
+	}
 }

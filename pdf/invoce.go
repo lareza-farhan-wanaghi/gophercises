@@ -2,6 +2,7 @@ package pdf
 
 import (
 	"fmt"
+	"path/filepath"
 	"strconv"
 
 	"github.com/jung-kurt/gofpdf"
@@ -199,6 +200,10 @@ func (inv *invoicePDF) setDetails(items []*InvoiceItem) int {
 
 // Create creates the invoice pdf on the given filename
 func (inv *invoicePDF) Create(filename string, items []*InvoiceItem) error {
+	if filepath.Ext(filename) != ".pdf" {
+		return fmt.Errorf("filename must be a file path with .pdf extension")
+	}
+
 	inv.setCanvas()
 	inv.setHeader()
 	inv.setFooter()
