@@ -15,22 +15,32 @@ Solution for the [1st](https://github.com/gophercises/quiz) exercise. Activities
 
 To run the program:
 - Open a terminal session and go to the quiz directory.
-![q1](readme_images/q1.png)
+![quiz1](readme_images/quiz1.png)
 
 - Execute the main.go file in the main folder to run the program. (By default, the program will take the quiz question in the problem.csv file sequentially and have a duration of 30 seconds. You can use the s flag to shuffle the quiz questions and the t flag to set the duration)
-![q2](readme_images/q2.png)
+![quiz2](readme_images/quiz2.png)
 
 - Answer the questions by passing numbers in the terminal.
-![q3](readme_images/q3.png)
+![quiz3](readme_images/quiz3.png)
 
 - Here's the final output of the program. In this example, the program exited due to the timer timeout.
-![q4](readme_images/q4.png)
-
+![quiz4](readme_images/quiz4.png)
 
 
 **2. urlshort**
 
-Solution for the [2nd](https://github.com/gophercises/urlshort) exercise. Activities involved: making a simple HTTP listener & its handlers, which can also establish a Postgres database connection, and creating functions to read & parse JSON/YAML files. 
+Solution for the [2nd](https://github.com/gophercises/urlshort) exercise. Activities involved: making a simple web server that maps its paths into other URLs. The mapped paths can be specified in a JSON/YAML file or database. 
+
+To run the program:
+- Open a terminal session and go to the urlshort directory.
+![urlshort1](readme_images/urlshort1.png)
+
+- Execute the main.go file in the main folder to run the web server. (By default, the program will use the map on the pathyaml.yaml file to map its paths. You can use the f flag to specify the file or the d flag to specify a database address and use a database instead)
+![urlshort2](readme_images/urlshort2.png)
+
+- Visit the web server by using a browser. For example, we will visit the /urlshort path, and the program will redirect us to https://github.com/gophercises/urlshort as specified in the path map file.
+![urlshort3](readme_images/urlshort3.png)
+![urlshort4](readme_images/urlshort4.png)
 
 
 **3. cyoa**
