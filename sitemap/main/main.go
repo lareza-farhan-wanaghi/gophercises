@@ -3,27 +3,33 @@ package main
 import (
 	"flag"
 	"fmt"
+	"os"
 
 	"github.com/lareza-farhan-wanaghi/gophercises/sitemap"
 )
 
 // main provides the entry point of the app
 func main() {
-	urlFlag := flag.String("u", "https://en.wikipedia.org/wiki/Main_Page", "Specifies the url that will be inspected")
-	maxDepthFlag := flag.Int("d", 3, "Specifies the max crawl depth")
+	maxDepthFlag := flag.Int("d", 2, "Specifies the max crawl depth")
 	flag.Parse()
 
-	urls, err := sitemap.GetSameDomainUrls(*urlFlag, *maxDepthFlag)
+	targetRootUrl := os.Args[1]
+	urls, err := sitemap.GetSameDomainUrls(targetRootUrl, *maxDepthFlag)
 	if err != nil {
 		panic(err)
 	}
 
-	for _, url := range urls {
-		fmt.Println(url)
-	}
 	sitemapXml, err := sitemap.BuildSitemapXML(urls)
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println(sitemapXml)
+
+	outPath := os.Args[2]
+	outFile, err := os.OpenFile(outPath, os.O_WRONLY|os.O_CREATE, 0644)
+	if err != nil {
+		panic(err)
+	}
+	outFile.WriteString(sitemapXml)
+
+	fmt.Printf("Created the sitemap XML for %s with depth of %d at %s\n", targetRootUrl, *maxDepthFlag, outPath)
 }

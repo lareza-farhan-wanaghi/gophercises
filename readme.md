@@ -14,6 +14,7 @@ This repository contains my solutions for the [gophercises](https://gophercises.
 Solution for the [1st](https://github.com/gophercises/quiz) exercise. Activities involved: making a CLI program simulating a quiz, which reads user inputs and counts down a timer. 
 
 To run the program:
+
 - Open a terminal session and go to the quiz directory.<br/><br/>
 ![quiz1](readme_images/quiz1.png)
 
@@ -32,6 +33,7 @@ To run the program:
 Solution for the [2nd](https://github.com/gophercises/urlshort) exercise. Activities involved: making a simple web server that maps its paths into other URLs. The mapped paths can be specified in a JSON/YAML file or database. 
 
 To run the program:
+
 - Open a terminal session and go to the urlshort directory.<br/><br/>
 ![urlshort1](readme_images/urlshort1.png)
 
@@ -48,6 +50,7 @@ To run the program:
 Solution for the [3rd](https://github.com/gophercises/cyoa) exercise. Activities involved: creating a web app simulating a CYOA (Choose Your Own Adventure) experience that makes a story based on options the user chooses.
 
 To run the program:
+
 - Open a terminal session and go to the cyoa directory.<br/><br/>
 ![cyoa1](readme_images/cyoa1.png)
 
@@ -61,11 +64,13 @@ To run the program:
 ![cyoa6](readme_images/cyoa6.png)<br/><br/>
 ![cyoa7](readme_images/cyoa7.png)<br/><br/>
 
+
 **4. link**
 
 Solution for the [4th](https://github.com/gophercises/link) exercise. Activities involved: creating a program that parses an HTML file to collect links and texts from all of the "a" tags.
 
  To run the program:
+
 - Open a terminal session and go to the link directory.<br/><br/>
 ![link1](readme_images/link1.png)
 
@@ -75,7 +80,18 @@ Solution for the [4th](https://github.com/gophercises/link) exercise. Activities
 
 **5. sitemap**
 
-Solution for the [5th](https://github.com/gophercises/link) exercise. Activities involved: creating functions to crawl all reachable same-domain URLs from a specific URL, which runs asynchronously with the help of mutex and wait-group structs, and turn them into a sitemap XML, implementing regex match & searching.
+Solution for the [5th](https://github.com/gophercises/link) exercise. Activities involved: creating a program that crawls all reachable same-domain URLs from a given URL and maps the returned URLs to create a sitemap XML.
+
+To run the program:
+
+- Open a terminal session and go to the sitemap directory.<br/><br/>
+![sitemap1](readme_images/sitemap1.png)
+
+- Execute the main.go file in the main folder with exactly two arguments, one for the target URL that will be crawled and the other one for the path of the output file. (By default, this program will crawl the target URL for a maximum depth of 2. You can customize this value by using the d flag) <br/><br/>
+![sitemap2](readme_images/sitemap2.png)
+
+- In the above example, we crawled one of the main pages of Wikipedia and stored the resulting sitemap at demo.xml. Here's what the result looks like.<br/><br/>
+![sitemap3](readme_images/sitemap3.png)
 
 
 **6. hr1**
