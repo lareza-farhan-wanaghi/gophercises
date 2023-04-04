@@ -6,6 +6,7 @@ import (
 	"github.com/lareza-farhan-wanaghi/gophercises/img"
 )
 
+// main provides the entry point of the app
 func main() {
 	pngFile, err := os.OpenFile("demo.png", os.O_WRONLY|os.O_CREATE, 0777)
 	if err != nil {
