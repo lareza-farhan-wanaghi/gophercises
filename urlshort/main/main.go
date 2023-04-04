@@ -13,7 +13,7 @@ import (
 // main provides the entry point of the app
 func main() {
 	mux := urlshort.GetDefaultHandler()
-	databaseFlag := flag.String("d", "", "Specifies the database address that will be used. If isn't provided, will use file instead")
+	databaseFlag := flag.String("d", "", "Specifies the database address that will be used. If it isn't provided, will use file instead")
 	fileFlag := flag.String("f", "pathyaml.yaml", "Specifies the file containing mapped paths")
 	flag.Parse()
 
