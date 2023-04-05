@@ -24,7 +24,7 @@ To run the program:
 - Answer the questions by passing numbers in the terminal.<br/><br/>
 ![quiz3](readme_images/quiz3.png)
 
-- Here's the final output of the program. In this example, the program exited due to the timer timeout.<br/><br/>
+- Here's the final output of the program. (In this example, the program exited due to the timer timeout)<br/><br/>
 ![quiz4](readme_images/quiz4.png)
 
 
@@ -40,7 +40,7 @@ To run the program:
 - Execute the main.go file in the main folder to run the web server. (By default, the program will use the map on the pathyaml.yaml file to map its paths. You can use the f flag to specify the file or the d flag to specify a database address and use that database instead)<br/><br/>
 ![urlshort2](readme_images/urlshort2.png)
 
-- Visit the web server by using a browser. For example, we will visit the /urlshort path, and the program will redirect us to https://github.com/gophercises/urlshort as specified in the path map file.<br/><br/>
+- Visit the web server by using a browser. (For example, we will visit the /urlshort path, and the program will redirect us to https://github.com/gophercises/urlshort as specified in the path map file)<br/><br/>
 ![urlshort3](readme_images/urlshort3.png)<br/><br/>
 ![urlshort4](readme_images/urlshort4.png)
 
@@ -57,7 +57,7 @@ To run the program:
 - Execute the main.go file in the main directory to run the web app. (By default, the program will take the gopher.json to build the story tree. You can also use the f flag to specify the path of the file)<br/><br/>
 ![cyoa2](readme_images/cyoa2.png)
 
-- Visit the root path of the web app on a browser (it will be redirected to the /intro path). In this example, we will choose some options (the ones in a darker color) to make up our story.<br/><br/>
+- Visit the root path of the web app on a browser (it will be redirected to the /intro path). (In this example, we will choose some options (the ones in a darker color) to make our story)<br/><br/>
 ![cyoa3](readme_images/cyoa3.png)<br/><br/>
 ![cyoa4](readme_images/cyoa4.png)<br/><br/>
 ![cyoa5](readme_images/cyoa5.png)<br/><br/>
@@ -74,7 +74,7 @@ Solution for the [4th](https://github.com/gophercises/link) exercise. Activities
 - Open a terminal session and go to the link directory.<br/><br/>
 ![link1](readme_images/link1.png)
 
-- Execute the main.go file in the main folder with one argument specifying the HTML file that will be parsed. In this example, we will use the demo.html file as the target HTML file.<br/><br/>
+- Execute the main.go file in the main folder with one argument specifying the HTML file that will be parsed. (In this example, we will use the demo.html file as the target HTML file)<br/><br/>
 ![link2](readme_images/link2.png)
 
 
@@ -103,7 +103,7 @@ To run the program:
 - Open a terminal session and go to the hr1 directory.<br/><br/>
 ![hr1](readme_images/hr1.png)
 
-- Execute the main.go file in the main folder with exactly two arguments. The first argument specifies the text that will be encrypted with the Caesar-chipper encryption, and the second one is for the offset value for the encryption. As an example, we will run the program with "testTheProgram" as the target text and number one as the offset.<br/><br/>
+- Execute the main.go file in the main folder with exactly two arguments. The first argument specifies the text that will be encrypted with the Caesar-chipper encryption, and the second one is for the offset value for the encryption. (As an example, we will run the program with "testTheProgram" as the target text and number one as the offset)<br/><br/>
 ![hr2](readme_images/hr2.png)
 
 - And here's the Hackerrank result of the solution.<br/><br/>
@@ -113,8 +113,30 @@ To run the program:
 
 **7. task**
 
-Solution for the [7th](https://github.com/gophercises/task) exercise. Activities involved: creating a CLI to-do task manager program with cobra library that stores and retrieve data in a boltDB database. 
+Solution for the [7th](https://github.com/gophercises/task) exercise. Activities involved: creating a CLI program that can be used to manage a list of to-do tasks. 
 
+To run the program:
+
+- Open a terminal session and go to the task directory.<br/><br/>
+![task1](readme_images/task1.png)
+
+- Before we install the CLI program, make sure we have the correct GOBIN environment variable pointing to our go bin folder. Below is the sample correct output for echoing the GOBIN variable.<br/><br/>
+![task2](readme_images/task2.png)
+
+- Install the entry of the CLI program that is beneath the inner task folder.<br/><br/>
+![task3](readme_images/task3.png)
+
+- Check if the program is installed correctly by running an empty task command. (The output of this command will also show the documentation of the command, including all its available subcommands)<br/><br/>
+![task4](readme_images/task4.png)
+
+- Run the task command followed by one of its subcommands and arguments for that subcommand. Let's say we're going to add "cleaning rooms", "studying math", and "fixing the car" to our to-do list. We can do these as follow.<br/><br/>
+![task5](readme_images/task5.png)
+
+- Let's check our active to-do list by using the list subcommand. (As you will see below, the data are stored in alphabetical order)<br/><br/>
+![task6](readme_images/task6.png)
+
+- You can mark an active task as done by using the do subcommand and list all tasks marked as done with the completed subcommand. (As an example, we will mark the "studying math" task before as done and then check the completed and active task list)<br/><br/>
+![task7](readme_images/task7.png)
 
 **8. phone**
 
