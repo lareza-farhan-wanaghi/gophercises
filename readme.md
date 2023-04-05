@@ -160,12 +160,31 @@ To run the program:
 
 **9. deck**
 
-Solution for the [9th](https://github.com/gophercises/deck) exercise. Activities involved: creating structs and functions to simulate items in a card game, implementing the functinal-ops coding pattern in a function, and using stringer with go-generate to work with enum-like objects.
+Solution for the [9th](https://github.com/gophercises/deck) exercise. Activities involved: creating a package representing a card in a card game, specifically a suit card game. There's no real program in this directory, but there is one printing the contents of a newly created deck.
+
+To run the program:
+
+- Open a terminal session and go to the deck directory.<br/><br/>
+![deck1](readme_images/deck1.png)
+
+- Run the main.go file in the main directory. (By default, the program will create a deck of suit cards with no joker included and sort the deck based on the card IDs ascendingly. You can customize this by using the j flag to specify the number of jokers and s to point out the sorting algorithm)<br/><br/>
+![deck2](readme_images/deck2.png)
 
 
 **10. blackjacks**
 
-Solution for the [10th](https://github.com/gophercises/blackjack) and [11th](https://github.com/gophercises/blackjack_ai) exercises. Activities involved: creating a CLI program simulating a blackjack game and making use of the interface data structure to generalize the AI behavior algorithms. 
+Solution for the [10th](https://github.com/gophercises/blackjack) and [11th](https://github.com/gophercises/blackjack_ai) exercises. Activities involved: creating a CLI program that simulates the blackjack card game.
+
+To run the program:
+
+- Open a terminal session and go to the blackjack directory.<br/><br/>
+![blackjack1](readme_images/blackjack1.png)
+
+- Run the main.go file in the main folder with any number of arguments specifying the active players included in the game. (By default, the program will initiate the game with one dealer, one AI, and several players specified. You can customize the number of AIs by using the c flag. In this example, we will create the game with two computers and one player named Farhan)<br/><br/>
+![blackjack2](readme_images/blackjack2.png)
+
+- Let's interact more with the program by playing one round of the game.<br/><br/>
+![blackjack](readme_images/blackjack3.gif)
 
 
 **11. renamer**
