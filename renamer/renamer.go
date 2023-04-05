@@ -29,7 +29,7 @@ func RenameFiles(pattern, to *string) func(string, os.FileInfo, error) error {
 
 		newPath := filepath.Join(dn, renamedFn)
 		if _, err = os.Stat(newPath); !os.IsNotExist(err) {
-			fmt.Printf("skip renaming %s to %s since a file is exist in that path\n", path, newPath)
+			fmt.Printf("Skipped renaming the \"%s\" file to \"%s\" since there is another file in the resulting path\n", path, newPath)
 			return err
 		}
 
@@ -38,6 +38,7 @@ func RenameFiles(pattern, to *string) func(string, os.FileInfo, error) error {
 			return err
 		}
 
+		fmt.Printf("Renamed the \"%s\" file to \"%s\"\n", path, newPath)
 		return nil
 	}
 }

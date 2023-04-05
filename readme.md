@@ -54,7 +54,7 @@ To run the program:
 - Open a terminal session and go to the cyoa directory.<br/><br/>
 ![cyoa1](readme_images/cyoa1.png)
 
-- Run the main.go file in the main directory to start the web app. (By default, the program will take the gopher.json to build the story tree. You can also use the f flag to specify the path of the file)<br/><br/>
+- Run all the .go files in the main directory to start the web app. (By default, the program will take the gopher.json to build the story tree. You can also use the f flag to specify the path of the file)<br/><br/>
 ![cyoa2](readme_images/cyoa2.png)
 
 - Visit the root path of the web app on a browser (it will be redirected to the /intro path). (In this example, we will choose some options (the ones in a darker color) to make our story)<br/><br/>
@@ -103,7 +103,7 @@ To run the program:
 - Open a terminal session and go to the hr1 directory.<br/><br/>
 ![hr1](readme_images/hr1.png)
 
-- Execute the main.go file in the main folder with exactly two arguments. The first argument specifies the text that will be encrypted with the Caesar-chipper encryption, and the second one is for the offset value for the encryption. (As an example, we will run the program with "testTheProgram" as the target text and number one as the offset)<br/><br/>
+- Execute the main.go file in the main folder with exactly two arguments. (The first argument specifies the text that will be encrypted with the Caesar-chipper encryption, and the second one is for the offset value for the encryption. As an example, we will run the program with "testTheProgram" as the target text and number one as the offset)<br/><br/>
 ![hr2](readme_images/hr2.png)
 
 - And here's the Hackerrank result of the solution.<br/><br/>
@@ -126,7 +126,7 @@ To run the program:
 - Install the entry of the CLI program that is beneath the inner task folder.<br/><br/>
 ![task3](readme_images/task3.png)
 
-- Check if the program is installed correctly by running an empty task command. (The output of this command will also show the documentation of the command, including all its available subcommands)<br/><br/>
+- Check if the program is installed correctly by running the task command with no additional subcommands or arguments. (The output of this command will also show the documentation of the command, including all its available subcommands)<br/><br/>
 ![task4](readme_images/task4.png)
 
 - Run the task command followed by one of its subcommands and arguments for that subcommand. Let's say we're going to add "cleaning rooms", "studying math", and "fixing the car" to our to-do list. We can do these as follow.<br/><br/>
@@ -135,7 +135,7 @@ To run the program:
 - Let's check our active to-do list by using the list subcommand. (As you will see below, the data are stored in alphabetical order)<br/><br/>
 ![task6](readme_images/task6.png)
 
-- You can mark an active task as done by using the do subcommand and list all tasks marked as done with the completed subcommand. (As an example, we will mark the "studying math" task before as done and then check the completed and active task list)<br/><br/>
+- You can mark an active task as done by using the do subcommand and list all tasks marked as done with the completed subcommand. (As an example, we will mark the "studying math" task and then check the completed and active task list)<br/><br/>
 ![task7](readme_images/task7.png)
 
 
@@ -167,7 +167,7 @@ To run the program:
 - Open a terminal session and go to the deck directory.<br/><br/>
 ![deck1](readme_images/deck1.png)
 
-- Run the main.go file in the main directory. (By default, the program will create a deck of suit cards with no joker included and sort the deck based on the card IDs ascendingly. You can customize this by using the j flag to specify the number of jokers and s to point out the sorting algorithm)<br/><br/>
+- Run the main.go file in the main directory. (By default, the program will create a deck of suit cards with no joker included and sort the deck based on the card IDs ascendingly. You can customize this by using the j flag to specify the number of jokers and the s flag to point out the sorting algorithm)<br/><br/>
 ![deck2](readme_images/deck2.png)
 
 
@@ -180,7 +180,7 @@ To run the program:
 - Open a terminal session and go to the blackjack directory.<br/><br/>
 ![blackjack1](readme_images/blackjack1.png)
 
-- Run the main.go file in the main folder with any number of arguments specifying the active players included in the game. (By default, the program will initiate the game with one dealer, one AI, and several players specified. You can customize the number of AIs by using the c flag. In this example, we will create the game with two computers and one player named Farhan)<br/><br/>
+- Run the main.go file in the main folder with any number of arguments specifying the active players included in the game. (By default, other than the players, the program will initiate the game with one dealer and one AI. You can customize the number of AIs by using the c flag. In this example, we will create the game with two computers and one player named Farhan)<br/><br/>
 ![blackjack2](readme_images/blackjack2.png)
 
 - Let's interact more with the program by playing one round of the game.<br/><br/>
@@ -189,8 +189,23 @@ To run the program:
 
 **11. renamer**
 
-Solution for the [12th](https://github.com/gophercises/renamer) exercise. Activities involved: Creating functions that will traverse a directory recursively and rename files in that directory (and its subdirectory) that match a pattern specified to follow a given naming pattern. 
+Solution for the [12th](https://github.com/gophercises/renamer) exercise. Activities involved: Creating a program that will rename files in the specified directory that match the provided pattern.
 
+To run the program:
+
+- Open a terminal session and go to the renamer directory.<br/><br/>
+![renamer1](readme_images/renamer1.png)
+
+- Before we run the program, let's take a look at the folder that we will use as the target directory in our program.<br/><br/>
+![renamer2](readme_images/renamer2.png)
+
+- Now, run the main.go file in the main folder with exactly three arguments and check again the previous folder. (The first argument specifies the pattern used to find the target files and parts of the file names that will be altered, the second one defines the replacement words for altering the file names, and the third one points out the path of the folder that will be scanned by the program)<br/><br/>
+![renamer3](readme_images/renamer3.png)<br/><br/>
+![renamer4](readme_images/renamer4.png)
+
+- Additionally, you can also use regex patterns in the first and second arguments. (In the following example, we will use regex patterns to match sequences of digits and append the N letter at the front of the sequences)<br/><br/>
+![renamer5](readme_images/renamer5.png)
+![renamer6](readme_images/renamer6.png)
 
 **12. quiet_hn**
 
