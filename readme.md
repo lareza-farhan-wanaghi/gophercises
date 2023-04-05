@@ -243,13 +243,33 @@ To run the program:
 - Though there are not many things there, the web application is running normally. Now, let's visit the /panic path of the web application. <br/><br/>
 ![recover4](readme_images/recover4.png)
 
-- The above output indicates the web application has recovered from a panic situation, and the stack traces printed are the traces for the corresponding panic situation. Click one of the links provided to show the source code associated with the stack trace. (Below, we will take a look at the source code that is lying at the very top of the stack traces)<br/><br/>
+- The above output indicates the web application has recovered from a panic situation, and the stack traces printed are the traces for the corresponding panic situation. Click one of the links provided to show the source code associated with the stack trace. (Below, we will see the source code that is lying at the very top of the stack traces)<br/><br/>
 ![recover5](readme_images/recover5.png)
 
 
 **14. secret**
 
-Solution for the [17th](https://github.com/gophercises/secret) exercise. Activities involved: Making a CLI program to store and retrieve data from a file that is encrypted, which uses the stream reader and writer from the go's cipher library.
+Solution for the [17th](https://github.com/gophercises/secret) exercise. Activities involved: Making a CLI program that stores and retrieves key-value pair data from encrypted storage that lives in a file.
+
+To run the program:
+
+- Open a terminal session and go to the secret directory.<br/><br/>
+![secret1](readme_images/secret1.png)
+
+- Install the entry of the program beneath the inner secret folder. (Make sure you have the GOBIN environment variable set correctly. Use the echo command to check the variable)<br/><br/>
+![secret2](readme_images/secret2.png)
+
+- Run the secret command with no additional subcommands or arguments to test if the program is installed correctly. You should see the documentation of the program as follow.<br/><br/>
+![secret3](readme_images/secret3.png)
+
+- Let's populate some data into our storage by using the set subcommand. (By default, all of the commands executed will use the default encoding key and storage file path. Use the k flag to change the encoding key and the f flag to point out the path of the file that will be used. In this example, we will store the following three "key:value" pair data to our encrypted storage, namely "username:farhan", "email:farhan@fakemail.com", and "password:123456")<br/><br/>
+![secret4](readme_images/secret4.png)
+
+- Use the list subcommand to show all key-value pairs stored in our storage. 
+![secret5](readme_images/secret5.png)
+
+- Below is the content of the file used for the encrypted storage, which is at the default ./file path. As you will see, it is encrypted and unreadable.
+![secret6](readme_images/secret6.png)
 
 
 **15. transform**

@@ -19,7 +19,7 @@ func generalPanicRecovery(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusInternalServerError)
 		if isDevServer {
 			trace := string(debug.Stack())
-			linkedTrace := fmt.Sprintf("<body><p style='white-space:pre'>%s\n%s</p></body>", err, parseTrace(trace))
+			linkedTrace := fmt.Sprintf("<body><p style='white-space:pre'>%s\n\n%s</p></body>", err, parseTrace(trace))
 			fmt.Fprintln(w, linkedTrace)
 		} else {
 			fmt.Fprintf(w, "Something went wrong")

@@ -10,7 +10,7 @@ var isDevServer bool
 
 // RunServer runs the web server simulating panic recovery
 func RunServer() {
-	devFlag := flag.Bool("dev", false, "specifies that the server is in the development mode")
+	devFlag := flag.Bool("dev", true, "specifies that the server is in the development mode")
 	flag.Parse()
 	isDevServer = *devFlag
 
@@ -19,6 +19,6 @@ func RunServer() {
 	mux.HandleFunc("/", homeHandler)
 	mux.HandleFunc("/debug/", sourceCodeHandler)
 
-	log.Printf("Stating a web server on port 3000")
-	http.ListenAndServe(":3000", mux)
+	log.Printf("Stating a web server on port 8080")
+	http.ListenAndServe(":8080", mux)
 }

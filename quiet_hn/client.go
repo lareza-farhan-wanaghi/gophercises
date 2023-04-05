@@ -40,7 +40,7 @@ func (c *client) init(initialTotalStories int) {
 // refreshCache re-fetches data from the APIs to collect the most updated ones
 func (c *client) refreshCache() {
 	c.tmpStories = c.getNewTopStories(len(c.stories), 0, []*story{})
-	log.Printf("Added new data to the tmpStories. stories: %d, tmpStories: %d\n", len(c.stories), len(c.tmpStories))
+	log.Printf("Cache updated")
 
 	c.timer.Reset(c.refreshTime)
 }
@@ -55,7 +55,7 @@ func (c *client) GetTopStories(m int) []*story {
 	}
 
 	if len(c.stories) < m {
-		c.stories = c.getNewTopStories(m, 0, c.stories)
+		c.stories = c.getNewTopStories(m, 0, []*story{})
 	}
 	return c.stories[:m]
 }
