@@ -269,7 +269,7 @@ To run the program:
 ![secret5](readme_images/secret5.png)
 ![secret6](readme_images/secret6.png)
 
-- Below is the content of the file used for the encrypted storage, which is at the default ./file path. As you will see, it is encrypted and unreadable.<br/><br/>
+- Below is the content of the file used for the encrypted storage, which is at the default ./test path. As you will see, it is encrypted and unreadable.<br/><br/>
 ![secret7](readme_images/secret7.png)
 
 
