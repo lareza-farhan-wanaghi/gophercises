@@ -262,10 +262,10 @@ To run the program:
 - Run the secret command with no additional subcommands or arguments to test if the program is installed correctly. You should see the documentation of the program as follow.<br/><br/>
 ![secret3](readme_images/secret3.png)
 
-- Let's populate some data into our storage by using the set subcommand. (By default, all of the commands executed will use the default encoding key and storage file path. Use the k flag to change the encoding key and the f flag to point out the path of the file that will be used. In this example, we will store the following three "key:value" pair data to our encrypted storage, namely "username:farhan", "email:farhan@fakemail.com", and "password:123456")<br/><br/>
+- Let's populate some data into our storage by using the set subcommand. (By default, all of the commands executed will use the default encoding key and storage file path. Use the k flag to change the encoding key and the f flag to point out the path of the file that will be used. In this example, we will store the following three "key:value" pair data into our encrypted storage, namely "fb-password:123456", "ig-password:aabbccdd", and "gmail-password:uncrackable_pw")<br/><br/>
 ![secret4](readme_images/secret4.png)
 
-- Use the list subcommand to show all key-value pairs stored in our storage. <br/><br/>
+- Use the list subcommand to show all key-value pairs stored in our storage and the get subcommand for an individual value corresponding to the specified key. <br/><br/>
 ![secret5](readme_images/secret5.png)
 
 - Below is the content of the file used for the encrypted storage, which is at the default ./file path. As you will see, it is encrypted and unreadable.<br/><br/>
