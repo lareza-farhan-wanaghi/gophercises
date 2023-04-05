@@ -1,0 +1,30 @@
+{{template "base" . }}
+
+{{define "title"}}
+    Choose your own adventure
+{{end}}
+
+{{define "content"}}
+    <h2 class="mt-5" id="title">
+        {{ index .Data "arc-title" }}
+    </h2>
+    <hr>
+
+    <div id="storyContainer">
+        {{range $story := index .Data "arc-story"}}
+            <p>
+                {{$story}}
+            </p>
+        {{end}}
+    </div>
+
+    <div id="optionContainer">
+       {{range $option := index .Data "arc-options"}}
+            <a href="{{ $option.NextArc }}" type="button" class="d-block btn mb-3 btn-primary">
+                {{$option.Text}}
+            </a>
+        {{end}}
+    </div>
+    
+
+{{end}}
