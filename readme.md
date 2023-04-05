@@ -207,14 +207,44 @@ To run the program:
 ![renamer5](readme_images/renamer5.png)
 ![renamer6](readme_images/renamer6.png)
 
+
 **12. quiet_hn**
 
-Solution for the [13th](https://github.com/gophercises/quiet_hn) exercise. Activities involved: Creating functions that concurrently retrieve data from an API and order back the returned data to follow the original ordering positions, using a wait-group and channel.
+Solution for the [13th](https://github.com/gophercises/quiet_hn) exercise. Activities involved: Creating a web application that retrieves stories from one of the Hackernews' APIs and shows several top stories based on the query of the path.
+
+To run the program:
+
+- Open a terminal session and go to the quiet_hn directory.<br/><br/>
+![quiet_hn1](readme_images/quiet_hn1.png)
+
+- Run the main.go file in the main folder to start running the web application. (By default, the application will create variables in the memory for caching that will be refreshed every ten seconds. You can use the r flag to change this number)<br/><br/>
+![quiet_hn2](readme_images/quiet_hn2.png)
+
+- Let's visit our running web application on a browser. (The application will return the top 30 stories from the API if the user visits its root path with no additional query parameter. You can set the n query parameter to specify the number of stories shown)<br/><br/>
+![quiet_hn3](readme_images/quiet_hn3.png)<br/><br/>
+![quiet_hn4](readme_images/quiet_hn4.png)
 
 
 **13. recover**
 
-Solution for the [14th](https://github.com/gophercises/recover) and [15th](https://github.com/gophercises/recover_chroma) exercises. Activities involved: Creating functions that simulate a panic-recovery event in a web server and show its stack tracks and making use of the Chroma syntax-highlighting library to show a syntax-highlighted source code on the browser. 
+Solution for the [14th](https://github.com/gophercises/recover) and [15th](https://github.com/gophercises/recover_chroma) exercises. Activities involved: Creating a web application simulating a panic-recovery event and printing the stack trace and source codes related to that event.
+
+To run the program:
+
+- Open a terminal session and go to the recovery directory.<br/><br/>
+![recover1](readme_images/recover1.png)
+
+- Run the main.go file in the main folder to start the web server. (The stack trace and source code printing feature is only available for the dev mode and is the default mode. You can change this by using the d flag)<br/><br/>
+![recover2](readme_images/recover2.png)
+
+- Let's visit the root path of our web.<br/><br/>
+![recover3](readme_images/recover3.png)
+
+- Though there are not many things there, the web application is running normally. Now, let's visit the /panic path of the web application. <br/><br/>
+![recover4](readme_images/recover4.png)
+
+- The above output indicates the web application has recovered from a panic situation, and the stack traces printed are the traces for the corresponding panic situation. Click one of the links provided to show the source code associated with the stack trace. (Below, we will take a look at the source code that is lying at the very top of the stack traces)<br/><br/>
+![recover5](readme_images/recover5.png)
 
 
 **14. secret**
