@@ -2,7 +2,9 @@ package main
 
 import (
 	"database/sql"
+	"flag"
 	"fmt"
+	"os"
 
 	"github.com/lareza-farhan-wanaghi/gophercises/phone"
 	_ "github.com/lib/pq"
@@ -10,7 +12,8 @@ import (
 
 // main provides the entry point of the app
 func main() {
-	db, err := sql.Open("postgres", "user=postgres dbname=Custom sslmode=disable password=")
+	dbFlag := flag.String("d", "user=postgres dbname=Custom sslmode=disable password=", "Specifies the configuration for the database connection")
+	db, err := sql.Open("postgres", *dbFlag)
 	if err != nil {
 		panic(err)
 	}
@@ -26,24 +29,15 @@ func main() {
 		panic(err)
 	}
 
-	mockData := []phone.PhoneModel{
-		{PhoneNumber: "1234567890"},
-		{PhoneNumber: "123 456 7891"},
-		{PhoneNumber: "(123) 456 7892"},
-		{PhoneNumber: "(123) 456-7893"},
-		{PhoneNumber: "123-456-7894"},
-		{PhoneNumber: "123-456-7890"},
-		{PhoneNumber: "1234567892"},
-		{PhoneNumber: "(123)456-7892"},
-	}
 	fmt.Printf("Initial phone numbers:\n")
-	for i, p := range mockData {
-		_, err := phoneDb.InsertPhone(&p)
+	for i := 1; i < len(os.Args); i++ {
+		phone := &phone.PhoneModel{PhoneNumber: os.Args[i]}
+		_, err := phoneDb.InsertPhone(phone)
 		if err != nil {
 			panic(err)
 		}
 
-		fmt.Printf("%d. %s\n", i+1, p.PhoneNumber)
+		fmt.Printf("%d. %s\n", i+1, phone.PhoneNumber)
 	}
 
 	err = phoneDb.NormalizePhoneData()

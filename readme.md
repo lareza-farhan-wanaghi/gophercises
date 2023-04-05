@@ -18,7 +18,7 @@ To run the program:
 - Open a terminal session and go to the quiz directory.<br/><br/>
 ![quiz1](readme_images/quiz1.png)
 
-- Execute the main.go file in the main folder to start the program. (By default, the program will take the quiz question in the problem.csv file sequentially and have a duration of 30 seconds. You can use the s flag to shuffle the quiz questions and the t flag to set the duration)<br/><br/>
+- Run the main.go file in the main folder to start the program. (By default, the program will take the quiz question in the problem.csv file sequentially and have a duration of 30 seconds. You can use the s flag to shuffle the quiz questions and the t flag to set the duration)<br/><br/>
 ![quiz2](readme_images/quiz2.png)
 
 - Answer the questions by passing numbers in the terminal.<br/><br/>
@@ -37,7 +37,7 @@ To run the program:
 - Open a terminal session and go to the urlshort directory.<br/><br/>
 ![urlshort1](readme_images/urlshort1.png)
 
-- Execute the main.go file in the main folder to run the web server. (By default, the program will use the map on the pathyaml.yaml file to map its paths. You can use the f flag to specify the file or the d flag to specify a database address and use that database instead)<br/><br/>
+- Run the main.go file in the main folder to start the web server. (By default, the program will use the map on the pathyaml.yaml file to map its paths. You can use the f flag to specify the file or the d flag to specify a database address and use that database instead)<br/><br/>
 ![urlshort2](readme_images/urlshort2.png)
 
 - Visit the web server by using a browser. (For example, we will visit the /urlshort path, and the program will redirect us to https://github.com/gophercises/urlshort as specified in the path map file)<br/><br/>
@@ -54,7 +54,7 @@ To run the program:
 - Open a terminal session and go to the cyoa directory.<br/><br/>
 ![cyoa1](readme_images/cyoa1.png)
 
-- Execute the main.go file in the main directory to run the web app. (By default, the program will take the gopher.json to build the story tree. You can also use the f flag to specify the path of the file)<br/><br/>
+- Run the main.go file in the main directory to start the web app. (By default, the program will take the gopher.json to build the story tree. You can also use the f flag to specify the path of the file)<br/><br/>
 ![cyoa2](readme_images/cyoa2.png)
 
 - Visit the root path of the web app on a browser (it will be redirected to the /intro path). (In this example, we will choose some options (the ones in a darker color) to make our story)<br/><br/>
@@ -74,7 +74,7 @@ Solution for the [4th](https://github.com/gophercises/link) exercise. Activities
 - Open a terminal session and go to the link directory.<br/><br/>
 ![link1](readme_images/link1.png)
 
-- Execute the main.go file in the main folder with one argument specifying the HTML file that will be parsed. (In this example, we will use the demo.html file as the target HTML file)<br/><br/>
+- Run the main.go file in the main folder with one argument specifying the HTML file that will be parsed. (In this example, we will use the demo.html file as the target HTML file)<br/><br/>
 ![link2](readme_images/link2.png)
 
 
@@ -87,7 +87,7 @@ To run the program:
 - Open a terminal session and go to the sitemap directory.<br/><br/>
 ![sitemap1](readme_images/sitemap1.png)
 
-- Execute the main.go file in the main folder with exactly two arguments, one for the target URL that will be crawled and the other one for the path of the output file. (By default, this program will crawl the target URL for a maximum depth of 2. You can customize this value by using the d flag) <br/><br/>
+- Run the main.go file in the main folder with exactly two arguments, one for the target URL that will be crawled and the other one for the path of the output file. (By default, this program will crawl the target URL for a maximum depth of 2. You can customize this value by using the d flag) <br/><br/>
 ![sitemap2](readme_images/sitemap2.png)
 
 - In the above example, we crawled one of the main pages of Wikipedia and stored the resulting sitemap at demo.xml. Here's what the result looks like.<br/><br/>
@@ -113,7 +113,7 @@ To run the program:
 
 **7. task**
 
-Solution for the [7th](https://github.com/gophercises/task) exercise. Activities involved: creating a CLI program that can be used to manage a list of to-do tasks. 
+Solution for the [7th](https://github.com/gophercises/task) exercise. Activities involved: creating a CLI program that can be used to manage a list of to-do tasks and store the list in a local boldDB database.
 
 To run the program:
 
@@ -138,9 +138,24 @@ To run the program:
 - You can mark an active task as done by using the do subcommand and list all tasks marked as done with the completed subcommand. (As an example, we will mark the "studying math" task before as done and then check the completed and active task list)<br/><br/>
 ![task7](readme_images/task7.png)
 
+
 **8. phone**
 
-Solution for the [8th](https://github.com/gophercises/phone) exercise. Activities involved: creating more robust functions to interact with a PostgreSQL database, which does queries and alters a table, and a program to normalize phone number data.
+Solution for the [8th](https://github.com/gophercises/phone) exercise. Activities involved: creating a program that stores normalized (in the same format) and no duplicate phone numbers in a PostgreSQL database.
+
+To run the program:
+
+- Open a terminal session and go to the phone directory.<br/><br/>
+![phone1](readme_images/phone1.png)
+
+- Before we run the program, make sure we have the database running. (In here, we will use a local database named Custom and store the data in the phone_numbers table, which is currently empty) <br/><br/>
+![phone2](readme_images/phone2.png)
+
+- Now, run the main.go file in the main folder followed by any number of arguments specifying the phone numbers will be stored. (By default, the program will use the default configuration (which includes the address of the database, etc.) to initiate the database connection. You can use the d flag to custom this configuration)<br/><br/>
+![phone3](readme_images/phone3.png)
+
+- In the above example, we stored three phone numbers, and the program printed the inputted and resulting phone numbers. And as you will see below, our previously empty table should now have been populated with the new data.<br/><br/>
+![phone4](readme_images/phone4.png)
 
 
 **9. deck**
