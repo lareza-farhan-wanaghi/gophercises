@@ -267,9 +267,10 @@ To run the program:
 
 - Use the list subcommand to show all key-value pairs stored in our storage and the get subcommand for an individual value corresponding to the specified key. <br/><br/>
 ![secret5](readme_images/secret5.png)
+![secret6](readme_images/secret6.png)
 
 - Below is the content of the file used for the encrypted storage, which is at the default ./file path. As you will see, it is encrypted and unreadable.<br/><br/>
-![secret6](readme_images/secret6.png)
+![secret7](readme_images/secret7.png)
 
 
 **15. transform**
