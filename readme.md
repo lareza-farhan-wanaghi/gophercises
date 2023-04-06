@@ -217,10 +217,10 @@ To run the program:
 - Open a terminal session and go to the quiet_hn directory.<br/><br/>
 ![quiet_hn1](readme_images/quiet_hn1.png)
 
-- Run the main.go file in the main folder to start running the web application. (By default, the application creates variables in memory for caching that will be refreshed every ten seconds. You can use the r flag to change this number)<br/><br/>
+- Run the main.go file in the main folder to start running the web application. (By default, the application creates variables in memory for caching that will be refreshed every ten seconds. You can use the r flag to change the time for caching refreshment)<br/><br/>
 ![quiet_hn2](readme_images/quiet_hn2.png)
 
-- Let's visit our running web application on a browser. (The application returns the top 30 stories from the API if the user visits its root path with no additional parameter. You can set the n query parameter to specify the number of stories shown)<br/><br/>
+- Let's visit our running web application on a browser. (The application returns the top 30 stories from the API if the user visits its root path with no additional parameter. You can set the n query parameter to specify the number of stories returned)<br/><br/>
 ![quiet_hn3](readme_images/quiet_hn3.png)<br/><br/>
 ![quiet_hn4](readme_images/quiet_hn4.png)
 
@@ -234,7 +234,7 @@ To run the program:
 - Open a terminal session and go to the recovery directory.<br/><br/>
 ![recover1](readme_images/recover1.png)
 
-- Run the main.go file in the main folder to start the web server. (The stack trace and source code printing features are only available for the dev mode, but this mode is activated by default. You can change this using the d flag)<br/><br/>
+- Run the main.go file in the main folder to start the web server. (The stack trace and source code printing features are only available for the dev mode, but this is the mode chosen by default. You can change this using the d flag)<br/><br/>
 ![recover2](readme_images/recover2.png)
 
 - Let's visit the root path of our web.<br/><br/>
@@ -243,7 +243,7 @@ To run the program:
 - Though there are not many things there, the web application is running normally. Now, let's visit the /panic path of the web application. <br/><br/>
 ![recover4](readme_images/recover4.png)
 
-- The above output indicates the web application has recovered from a panic situation, and the stack traces printed are the traces for the corresponding panic situation. Click one of the links provided to show the source code associated with a given stack trace. (Below, we clicked the link at the very top of the stack traces and are shown the source code corresponding to that stack trace)<br/><br/>
+- The above output indicates the web application has recovered from a panic situation, and the stack traces printed are the traces for the corresponding panic situation. Click one of the links provided to show the source code associated with the given stack trace. (Below, we clicked the link at the very top of the stack traces and are shown the source code corresponding to that stack trace)<br/><br/>
 ![recover5](readme_images/recover5.png)
 
 
@@ -256,20 +256,20 @@ To run the program:
 - Open a terminal session and go to the secret directory.<br/><br/>
 ![secret1](readme_images/secret1.png)
 
-- Install the entry of the program beneath the inner secret folder. (Make sure you have the GOBIN environment variable set correctly. Use the echo command to check)<br/><br/>
+- Install the entry of the program beneath the inner secret folder. (Make sure you have the GOBIN environment variable set correctly)<br/><br/>
 ![secret2](readme_images/secret2.png)
 
 - Run the secret command with no additional subcommands or arguments to test if the program is installed correctly. You should also see the documentation of the program as follow.<br/><br/>
 ![secret3](readme_images/secret3.png)
 
-- Let's populate some data into our storage by using the set subcommand. (By default, all of the commands executed use the default encoding key and storage file path. Use the k flag to change the encoding key and the f flag to point out the path of the file that will be used. In the example below, we stored three "key:value" pair data into our encrypted storage, namely "fb-password:123456", "ig-password:aabbccdd", and "gmail-password:uncrackable_pw")<br/><br/>
+- Let's populate some data into our storage by using the set subcommand. (By default, all of the commands executed use the default encoding key and storage file path. Use the k flag to change the encoding key and the f flag to point out a path of another file that will be used. In the example below, we stored three "key:value" pair data into our encrypted storage, namely "fb-password:123456", "ig-password:aabbccdd", and "gmail-password:uncrackable_pw")<br/><br/>
 ![secret4](readme_images/secret4.png)
 
 - Use the list subcommand to show key-value pairs stored in our storage and the get subcommand to get an individual value of a specific key. <br/><br/>
 ![secret5](readme_images/secret5.png)
 ![secret6](readme_images/secret6.png)
 
-- Below was the content of the file for the encrypted storage after adding the data. As you can see, it is encrypted and unreadable.<br/><br/>
+- Below was the content of the file used for the encrypted storage after adding some data. As you can see, it is encrypted and unreadable.<br/><br/>
 ![secret7](readme_images/secret7.png)
 
 
@@ -285,10 +285,10 @@ To run the program:
 - Run the .go files beneath the main folder to start serving the web application.<br/><br/>
 ![transform2](readme_images/transform2.png)
 
-- Let's visit the root path of our application to see our application.<br/><br/>
+- Let's take a look at the root path of our application on a browser.<br/><br/>
 ![transform3](readme_images/transform3.png)
 
-- Select an image in your local workspace to specify the base of our generated images. Then, click the submit button to upload the image to the backend.<br/><br/>
+- Select an image in your local workspace to specify the base of our upcoming generated images. Then, click the submit button to upload the image to the backend.<br/><br/>
 ![transform4](readme_images/transform4.png)<br/><br/>
 ![transform5](readme_images/transform5.png)
 
@@ -309,17 +309,17 @@ To run the program:
 - Open a terminal session and go to the img directory.<br/><br/>
 ![img1](readme_images/img1.png)
 
-- Run the main.go file in the main folder with exactly two arguments. The first argument specifies the path of the CSV file containing the chart data and the second one defines the path for the output file. (In this example, We drew the chart on two of the possible output formats, which are PNG and SVG. We used the data from the demoData.csv file and defines the demoPNG.png and demoSVG.svg as the output paths)<br/><br/>
+- Run the main.go file in the main folder with exactly two arguments. The first argument specifies the path of the CSV file containing the chart data and the second one defines the path for the output file. (In this example, we drew the chart on two of the possible output formats, which are PNG and SVG. We used the data from the demoData.csv file and defines the demoPNG.png and demoSVG.svg as the output paths)<br/><br/>
 ![img2](readme_images/img2.png)
 
-- Now, let's take a look at our created files on a browser. (As you might be noticed, the SVG version is made more sophisticated than the PNG one. This is due to the robustness of the svggo library supporting the limited time, whereas the PNG version uses the basic built-in image library with finite functionality)
+- Now, let's take a look at our created files on a browser. (As you might have noticed, the SVG version is made more sophisticated than the PNG one. This is due to the robustness of the svggo library supporting the limited time, whereas the PNG version uses the basic built-in image library with finite functionality)
 ![img3](readme_images/img3.png)<br/><br/>
 ![img4](readme_images/img4.png)
 
 
 **17. pdf**
 
-This is the solution for the [20th](https://github.com/gophercises/pdf) exercise. Activities involved: creating two programs related to pdf, one that makes an invoice PDF file and the other one creates a certificate PDF file. We will cover both of the programs in the demonstration below.
+This is the solution for the [20th](https://github.com/gophercises/pdf) exercise. Activities involved: creating two programs related to pdf, one that makes an invoice letter on a PDF file and the other one creates a certificate instead. We will cover both of the programs in the demonstration below.
 
 To run the program:
 
@@ -329,7 +329,7 @@ To run the program:
 - Let's run the first program by running the main.go file in the invoice folder with exactly two arguments. The first argument is for the path of the input data file and the other one is for the path of the output file. (The following example used the data from the demoInvoice.csv file and put the result at demoInvoice.pdf)<br/><br/>
 ![pdf2](readme_images/pdf2.png)
 
-- Let's take a look at the resulting PDF of the first program on a browser. (Though the resulting PDF contained a lot of data (like a phone number, client name, etc.), for now, we are only able to alter the data that are in the item detail section)<br/><br/>
+- Let's take a look at the resulting PDF of the first program on a browser. (As a note, though the resulting PDF contained a lot of data (like a phone number, client name, etc.), for now, we are only able to alter the data that are in the item detail section)<br/><br/>
 ![pdf3](readme_images/pdf3.png)
 
 - Now, we can start running our second program to create a certificate. Run the main.go file in the cert directory with exactly two arguments. The first argument is for the name of the certificate holder, and the second one is for the output path. (Below, we defined the full name of this repository author, Lareza Farhan Wanaghi, as the certificate holder's name and specified demoCert.pdf as the output path)<br/><br/>
