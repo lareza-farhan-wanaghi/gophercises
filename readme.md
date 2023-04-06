@@ -275,13 +275,46 @@ To run the program:
 
 **15. transform**
 
-Solution for the [18th](https://github.com/gophercises/transform) exercise. Activities involved: Making a web app generating images from an image uploaded by the user, specifically, the APIs that process the uploaded image, which makes use of the exec library, and the front end that fetches the APIs. 
+Solution for the [18th](https://github.com/gophercises/transform) exercise. Activities involved: Making a web application that generates primitive-shape brushed images from an image uploaded by the user.
+
+To run the program:
+
+- Open a terminal session and go to the transform directory.<br/><br/>
+![transform1](readme_images/transform1.png)
+
+- Run the .go files beneath the main folder to run the web application.<br/><br/>
+![transform2](readme_images/transform2.png)
+
+- Let's visit the root path of our application on a browser to see our web application.<br/><br/>
+![transform3](readme_images/transform3.png)
+
+- To generate the images, select an image in your local workspace that will be used as the base, and then click the submit button to upload the image to the backend.<br/><br/>
+![transform4](readme_images/transform4.png)<br/><br/>
+![transform5](readme_images/transform5.png)
+
+- After several seconds, the backend will return us with eight generated images with different modes. Select one of the modes you like and click the submit button. (In this example, we will select the triangle mode to proceed with this step)<br/><br/>
+![transform6](readme_images/transform6.png)<br/><br/>
+![transform7](readme_images/transform7.png)
+
+- After a while, the final results of the generated images are returned. The generator used different numbers to draw the shape we have chosen. You can download the results of the images by clicking the download buttons.<br/><br/>
+![transform8](readme_images/transform8.png)
 
 
 **16. img**
 
-Solution for the [19th](https://github.com/gophercises/image) exercise. Activities involved: Making functions to draw chart bars on a png and SVG file, using the built-in image library and the svggo library. 
+Solution for the [19th](https://github.com/gophercises/image) exercise. Activities involved: Making a program that draws a chart on a PNG or SVG file.
 
+To run the program:
+
+- Open a terminal session and go to the img directory.<br/><br/>
+![img1](readme_images/img1.png)
+
+- Run the main.go file in the main folder with exactly two arguments. The first argument specifies the path of the CSV file containing the chart data and the second one defines the path for the output file. (In this example, We will draw the chart on the two of the possible output formats, which are PNG and SVG. We will use the data from the demoData.csv file and defines the demoPNG.png and demoSVG.svg as the output paths)<br/><br/>
+![img2](readme_images/img2.png)
+
+- Now, let's take a look at our created files on a browser. (As you will see below, the SVG version is made more sophisticated than the PNG one. This is due to the robustness of the svggo library that supports the limited time, whereas the PNG version uses the basic built-in image library with finite functionalities)
+![img3](readme_images/img3.png)<br/><br/>
+![img4](readme_images/img4.png)
 
 **17. pdf**
 
