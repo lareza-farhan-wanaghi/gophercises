@@ -18,7 +18,7 @@ To run the program:
 - Open a terminal session and go to the quiz directory.<br/><br/>
 ![quiz1](readme_images/quiz1.png)
 
-- Run the main.go file in the main folder to start the program. (By default, the program will take the quiz questions in the problem.csv file sequentially and have a duration of 30 seconds. You can use the s flag to shuffle the quiz questions and the t flag to set the duration)<br/><br/>
+- Run the main.go file in the main folder to start the program. (By default, the program takes the quiz questions in the problem.csv file sequentially and have a duration of 30 seconds. You can use the s flag to shuffle the quiz questions and the t flag to set the duration)<br/><br/>
 ![quiz2](readme_images/quiz2.png)
 
 - Answer the questions by passing numbers in the terminal.<br/><br/>
