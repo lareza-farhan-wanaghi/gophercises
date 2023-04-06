@@ -40,7 +40,7 @@ To run the program:
 - Run the main.go file in the main folder to start the web server. (By default, the program uses the path map on the pathyaml.yaml file. You can use the f flag to specify another file or the d flag to specify a database address and use that database instead)<br/><br/>
 ![urlshort2](readme_images/urlshort2.png)
 
-- Visit the web server by using a browser. (The example below visited the /urlshort path, and the program redirected us to https://github.com/gophercises/urlshort, the same as what was specified in the path map file)<br/><br/>
+- Visit the web server by using a browser. (The example below visited the /urlshort path, and the program redirected the request to https://github.com/gophercises/urlshort, the same as what was specified in the path map file)<br/><br/>
 ![urlshort3](readme_images/urlshort3.png)<br/><br/>
 ![urlshort4](readme_images/urlshort4.png)
 
