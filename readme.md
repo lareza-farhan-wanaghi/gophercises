@@ -4,7 +4,7 @@
 
 
 ## Description
-This repository contains my exploration for the [gophercises](https://gophercises.com/) exercises. As a challenge, all source codes written are my ideas without viewing the tutorial videos. (Note: Please visit the links corresponding to a specific exercise to see the official details about the exercise)
+This repository contains my exploration for the [gophercises](https://gophercises.com/) exercises. As a challenge, all source codes written are my ideas without viewing the tutorial videos. (Note: Please visit the links corresponding to a specific exercise to see the official exercise details)
 
 
 ### Folder details
@@ -18,29 +18,29 @@ To run the program:
 - Open a terminal session and go to the quiz directory.<br/><br/>
 ![quiz1](readme_images/quiz1.png)
 
-- Run the main.go file in the main folder to start the program. (By default, the program takes the quiz questions in the problem.csv file sequentially and have a duration of 30 seconds. You can use the s flag to shuffle the quiz questions and the t flag to set the duration)<br/><br/>
+- Run the main.go file in the main folder to start the program. (By default, the program takes the quiz questions in the problem.csv file sequentially and has a duration of 30 seconds. You can use the s flag to shuffle the quiz questions and the t flag to set the duration)<br/><br/>
 ![quiz2](readme_images/quiz2.png)
 
-- Answer the questions by passing numbers in the terminal.<br/><br/>
+- Answer the questions by passing numbers on the terminal.<br/><br/>
 ![quiz3](readme_images/quiz3.png)
 
-- Here's the final output of the program. (In this example, the program exited due to the timer timeout)<br/><br/>
+- Here's the final output of the program. (In this example, the program exited due to the timeout)<br/><br/>
 ![quiz4](readme_images/quiz4.png)
 
 
 **2. urlshort**
 
-This is the solution for the [2nd](https://github.com/gophercises/urlshort) exercise. Activities involved: making a simple web server that maps its paths into other paths. The mapped paths can be specified in a JSON/YAML file or database. 
+This is the solution for the [2nd](https://github.com/gophercises/urlshort) exercise. Activities involved: making a simple web application that maps its paths to other paths. The mapped paths can be specified in a JSON/YAML file or database. 
 
 To run the program:
 
 - Open a terminal session and go to the urlshort directory.<br/><br/>
 ![urlshort1](readme_images/urlshort1.png)
 
-- Run the main.go file in the main folder to start the web server. (By default, the program uses the path map on the pathyaml.yaml file. You can use the f flag to specify another file or the d flag to specify a database address and use that database instead)<br/><br/>
+- Run the main.go file in the main folder. (By default, the program uses the path map from the pathyaml.yaml file. You can use the f flag to define a path of another file or use the d flag to specify a database address and use that database instead)<br/><br/>
 ![urlshort2](readme_images/urlshort2.png)
 
-- Visit the web server by using a browser. (The example below visited the /urlshort path, and the program redirected the request to https://github.com/gophercises/urlshort, the same as what was specified in the path map file)<br/><br/>
+- Visit the web server by using a browser. (The example below visited the /urlshort path, and the program redirected the request to https://github.com/gophercises/urlshort, which is the same as what was specified in the path map)<br/><br/>
 ![urlshort3](readme_images/urlshort3.png)<br/><br/>
 ![urlshort4](readme_images/urlshort4.png)
 
@@ -54,10 +54,10 @@ To run the program:
 - Open a terminal session and go to the cyoa directory.<br/><br/>
 ![cyoa1](readme_images/cyoa1.png)
 
-- Run all the .go files in the main directory to start the web application. (By default, the program takes the gopher.json file to build the story tree. You can use the f flag to specify another path of the file that will be used)<br/><br/>
+- Run the .go files in the main directory to start the web application. (By default, the program takes the gopher.json file to build the story tree. You can use the f flag to specify a path of another file)<br/><br/>
 ![cyoa2](readme_images/cyoa2.png)
 
-- Visit the root path of the web app on a browser (it will be redirected to the /intro path). (In this example, we chose some of the available options (the ones in a darker color) to make our own story)<br/><br/>
+- Visit the root path of the web app on a browser (it will be redirected to the /intro path). (In this example, we chose some of the available options (the ones in a darker color) to make our story)<br/><br/>
 ![cyoa3](readme_images/cyoa3.png)<br/><br/>
 ![cyoa4](readme_images/cyoa4.png)<br/><br/>
 ![cyoa5](readme_images/cyoa5.png)<br/><br/>
@@ -74,13 +74,13 @@ This is the solution for the [4th](https://github.com/gophercises/link) exercise
 - Open a terminal session and go to the link directory.<br/><br/>
 ![link1](readme_images/link1.png)
 
-- Run the main.go file in the main folder with exactly one argument specifying the HTML file that will be parsed. (The example below used the demo.html file as the target HTML file to run the program)<br/><br/>
+- Run the main.go file in the main folder with exactly one argument specifying the HTML file that will be parsed. (The example below used the demo.html file as the target HTML file)<br/><br/>
 ![link2](readme_images/link2.png)
 
 
 **5. sitemap**
 
-This is the solution for the [5th](https://github.com/gophercises/link) exercise. Activities involved: creating a program that crawls all reachable same-domain URLs from a given URL and maps the returned URLs to create a sitemap XML.
+This is the solution for the [5th](https://github.com/gophercises/link) exercise. Activities involved: creating a program that crawls all reachable same-domain URLs from a given URL and maps the returned URLs into a sitemap XML.
 
 To run the program:
 
@@ -103,39 +103,39 @@ To run the program:
 - Open a terminal session and go to the hr1 directory.<br/><br/>
 ![hr1](readme_images/hr1.png)
 
-- Execute the main.go file in the main folder with exactly two arguments. The first argument specifies the text that will be encrypted with the Caesar-chipper encryption, and the second one defines the offset value for the encryption. (The following example ran the program with "testTheProgram" as the target text and one as the offset)<br/><br/>
+- Execute the main.go file in the main folder with exactly two arguments. The first argument specifies the text that will be encrypted with the Caesar-chipper encryption, and the second one defines the offset value for the encryption. (The following example ran the program with "testTheProgram" as the target text and the number one as the offset)<br/><br/>
 ![hr2](readme_images/hr2.png)
 
-- And here's the Hackerrank result of the solution.<br/><br/>
+- And here's the Hackerrank result of the solutions.<br/><br/>
 ![hr3](readme_images/hr3.png)<br/><br/>
 ![hr4](readme_images/hr4.png)
 
 
 **7. task**
 
-This is the solution for the [7th](https://github.com/gophercises/task) exercise. Activities involved: creating a CLI program that can be used to manage a list of to-do tasks and store it in a local boldDB database.
+This is the solution for the [7th](https://github.com/gophercises/task) exercise. Activities involved: creating a CLI program that can be used to manage a list of to-do tasks and store the data in a local boldDB database.
 
 To run the program:
 
 - Open a terminal session and go to the task directory.<br/><br/>
 ![task1](readme_images/task1.png)
 
-- Before we install the CLI program, make sure we have the correct GOBIN environment variable pointing to our go bin folder. Below is the sample correct output for echoing the GOBIN variable.<br/><br/>
+- Before we install the CLI program, make sure we have the correct GOBIN environment variable pointing to our go bin folder. Below is the sample correct output of echoing the GOBIN variable.<br/><br/>
 ![task2](readme_images/task2.png)
 
 - Install the entry of the CLI program that is beneath the inner task folder.<br/><br/>
 ![task3](readme_images/task3.png)
 
-- Check if the program is installed correctly by running the task command with no additional subcommands or arguments. (The output of this command will also show the documentation of the command, including all of its available subcommands)<br/><br/>
+- Check if the program is installed correctly by running the task command with no additional subcommands or arguments. (The output of this command will also show the documentation of the command, including the available subcommands)<br/><br/>
 ![task4](readme_images/task4.png)
 
 - Run the task command followed by one of its subcommands and arguments for that subcommand. (Let's say we're going to add "cleaning rooms", "studying math", and "fixing the car" to our to-do list. We can do these as follow)<br/><br/>
 ![task5](readme_images/task5.png)
 
-- Use the list subcommand to show all active to-do tasks.<br/><br/>
+- Use the list subcommand to show the list of currently active to-do tasks.<br/><br/>
 ![task6](readme_images/task6.png)
 
-- You can mark an active task as done by using the do subcommand and list all marked tasks with the completed subcommand. (In this example, we deleted the  "studying math" task and then checked the completed and active list)<br/><br/>
+- You can mark an active task as done by using the do subcommand and list all marked tasks with the completed subcommand. (In the below example, we deleted the "studying math" task and then checked the the list of completed and active tasks)<br/><br/>
 ![task7](readme_images/task7.png)
 
 
@@ -151,7 +151,7 @@ To run the program:
 - Before we run the program, make sure we have the database running. (Here, we will use a local database named Custom and store the data in the phone_numbers table, which is currently empty) <br/><br/>
 ![phone2](readme_images/phone2.png)
 
-- Now, run the main.go file in the main folder followed by any number of arguments specifying the phone numbers that will be stored. (By default, the program uses the default database configuration (which specifies the address of the database, username, etc.) to initiate the database connection. You can use the d flag to customize this configuration)<br/><br/>
+- Now, run the main.go file in the main folder followed by any number of arguments specifying the phone numbers that will be stored. (By default, to initiate the database connection, the program uses the default database configuration (which specifies the address of the database, username, etc.). You can use the d flag to customize this configuration)<br/><br/>
 ![phone3](readme_images/phone3.png)
 
 - In the above example, we stored three phone numbers, and the program printed the inputted and resulting phone numbers. Let's check again our previously empty database table. It should now have been populated with the new data.<br/><br/>
@@ -167,7 +167,7 @@ To run the program:
 - Open a terminal session and go to the deck directory.<br/><br/>
 ![deck1](readme_images/deck1.png)
 
-- Run the main.go file in the main directory. (By default, the program creates a deck of suit cards with no joker included and sorts the deck based on ascending order of the card IDs. Use the j flag to specify the number of jokers and the s flag to point out the index of the built-in sorting algorithms)<br/><br/>
+- Run the main.go file in the main directory. (By default, the program creates a deck of suit cards with no joker included and sorts the deck based on the ascending order of the card IDs. Use the j flag to specify the number of jokers and the s flag to point out the index of the built-in sorting algorithms that will be used)<br/><br/>
 ![deck2](readme_images/deck2.png)
 
 
@@ -180,7 +180,7 @@ To run the program:
 - Open a terminal session and go to the blackjack directory.<br/><br/>
 ![blackjack1](readme_images/blackjack1.png)
 
-- Run the main.go file in the main folder with any number of arguments specifying the active players that will be added to the game. (By default, other than the players, the program initiates the game with one dealer and an AI. You can customize the number of AIs by using the c flag. In the following, we created the game with two computers and one player named Farhan)<br/><br/>
+- Run the main.go file in the main folder with any number of arguments specifying the active players that will be added to the game. (By default, other than the players, the program initiates the game with one dealer and one AI. You can customize the number of AIs by using the c flag. In the following example, we created the game with two computers and one player named Farhan)<br/><br/>
 ![blackjack2](readme_images/blackjack2.png)
 
 - Let's interact more with the program by playing one round of the game.<br/><br/>
@@ -189,7 +189,7 @@ To run the program:
 
 **11. renamer**
 
-This is the solution for the [12th](https://github.com/gophercises/renamer) exercise. Activities involved: Creating a program that renames files that match a definite pattern in a specific directory.
+This is the solution for the [12th](https://github.com/gophercises/renamer) exercise. Activities involved: Creating a program that renames files matching a definite pattern in a specific directory.
 
 To run the program:
 
