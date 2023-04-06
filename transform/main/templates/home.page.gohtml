@@ -6,13 +6,13 @@
 
 {{define "content"}}
     <h2 class="mt-5" id="title">
-        SAMPLE APP
+        Primitive Image Generator
     </h2>
-    <p>Given an image, this app will then return the image brushed with primitive shapes.</p>
+    <p>Generate primitive shape brushed images from the input image.</p>
     <img class="mb-3"src="" height="150" alt=" " id="demo_image"/>
     <form action="" id="upload_image" autocomplete="off" novalidate="">
         <div class="mb-2">
-            <h5>Select a less than 500MB image:</h5>
+            <h5>Please select an image:</h5>
         </div>
         <div class="mb-3">
             <input required="" type="file" id="upload_image_file" name="upload_image_file" accept="image/*" onchange="showDemoImage()">

@@ -1,37 +1,58 @@
 package main
 
 import (
+	"encoding/csv"
 	"fmt"
+	"os"
+	"path/filepath"
+	"strconv"
 
 	"github.com/lareza-farhan-wanaghi/gophercises/img"
 )
 
 // main provides the entry point of the app
 func main() {
+	inpath := os.Args[1]
+	f, err := os.Open(inpath)
+	if err != nil {
+		panic(err)
+	}
+	defer f.Close()
 
-	chartItems := []*img.ChartItem{
-		{Key: "Jan", Value: 50},
-		{Key: "Feb", Value: 30},
-		{Key: "Mar", Value: 40},
-		{Key: "Apr", Value: 25},
-		{Key: "May", Value: 30},
-		{Key: "Jun", Value: 35},
-		{Key: "Jul", Value: 15},
-		{Key: "Aug", Value: 5},
-		{Key: "Sep", Value: 40},
-		{Key: "Oct", Value: 35},
-		{Key: "Nov", Value: 30},
-		{Key: "Des", Value: 40},
+	csvReader := csv.NewReader(f)
+	data, err := csvReader.ReadAll()
+	if err != nil {
+		panic(err)
+	}
+
+	chartItems := []*img.ChartItem{}
+	for _, d := range data {
+		itemValue, err := strconv.Atoi(d[1])
+		if err != nil {
+			panic(err)
+		}
+
+		item := &img.ChartItem{
+			Key:   d[0],
+			Value: itemValue,
+		}
+		chartItems = append(chartItems, item)
 	}
 
 	chart := img.NewChart(chartItems, 50, 10, 25, 25, 5)
 
-	err := chart.DrawSvg("demo-svg.png")
-	if err != nil {
-		fmt.Println(err)
-	}
-	err = chart.DrawPNG("demo-png.svg")
-	if err != nil {
-		fmt.Println(err)
+	outpath := os.Args[2]
+	if filepath.Ext(outpath) == ".png" {
+		err := chart.DrawPNG(outpath)
+		if err != nil {
+			fmt.Println(err)
+		}
+	} else if filepath.Ext(outpath) == ".svg" {
+		err := chart.DrawSvg(outpath)
+		if err != nil {
+			fmt.Println(err)
+		}
+	} else {
+		panic("Unsupported file extension. Currently available extension are .png and .svg")
 	}
 }

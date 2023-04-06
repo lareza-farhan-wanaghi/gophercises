@@ -35,7 +35,6 @@ func (app *application) SampleModesHandler(w http.ResponseWriter, r *http.Reques
 	}
 	defer os.RemoveAll(tmpDir)
 
-	r.Body = http.MaxBytesReader(w, r.Body, 500*1024)
 	filePath, err := app.saveAttachedImage(w, r, "file", tmpDir)
 	if err != nil {
 		app.writeError(w, err, http.StatusBadRequest)
@@ -86,7 +85,6 @@ func (app *application) SampleNsHandler(w http.ResponseWriter, r *http.Request) 
 	}
 	defer os.RemoveAll(tmpDir)
 
-	r.Body = http.MaxBytesReader(w, r.Body, 500*1024)
 	filePath, err := app.saveAttachedImage(w, r, "file", tmpDir)
 	if err != nil {
 		app.writeError(w, err, http.StatusBadRequest)

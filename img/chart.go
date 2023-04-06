@@ -61,7 +61,7 @@ func (c chart) DrawPNG(filename string) error {
 		return fmt.Errorf("filename must be a png format file path")
 	}
 
-	w, err := os.OpenFile(filename, os.O_WRONLY|os.O_CREATE, 0777)
+	w, err := os.OpenFile(filename, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0777)
 	if err != nil {
 		panic(err)
 	}
@@ -96,17 +96,18 @@ func (c chart) DrawSvg(filename string) error {
 		return fmt.Errorf("filename must be an svg format file path")
 	}
 
-	w, err := os.OpenFile(filename, os.O_WRONLY|os.O_CREATE, 0777)
+	w, err := os.OpenFile(filename, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0777)
 	if err != nil {
 		panic(err)
 	}
 	defer w.Close()
 
+	padding := 75
 	canvas := svg.New(w)
 	cyan := canvas.RGB(100, 200, 200)
-	paddedHeight := c.height + 50
-	bottom := paddedHeight - c.offsiteHeight
-	left := 50
+	paddedHeight := c.height + padding
+	bottom := paddedHeight - padding/2 - c.offsiteHeight
+	left := padding
 	paddedWidth := left + c.width
 
 	canvas.Start(paddedWidth, paddedHeight)
@@ -118,14 +119,17 @@ func (c chart) DrawSvg(filename string) error {
 		canvas.Rect(x, y, c.barWidth, c.barHeight*item.Value, cyan)
 
 		tx := x + c.barWidth/2
-		ty := paddedHeight
+		ty := paddedHeight - padding/3
 		canvas.Text(tx, ty, item.Key)
 	}
 
 	for i := 0; i < c.maxItemValue/c.valueInterval; i++ {
 		tx := left / 2
 		ty := bottom - (i+1)*c.valueInterval*c.barHeight
-		canvas.Text(tx, ty, strconv.Itoa((i+1)*c.valueInterval))
+		canvas.Text(tx, ty+5, strconv.Itoa((i+1)*c.valueInterval))
+
+		lx := left - 12
+		canvas.Line(lx, ty, left, ty, "stroke: rgb(150, 150, 150); stroke-width:2")
 	}
 	canvas.Gend()
 	canvas.Line(left, bottom, left, 0, "stroke: rgb(150, 150, 150); stroke-width:2")

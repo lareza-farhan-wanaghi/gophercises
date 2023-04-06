@@ -2,9 +2,9 @@
 
 ![Completion status: on-going](https://img.shields.io/badge/COMPLETION%20STATUS-ON--GOING-informational?style=for-the-badge)
 
-## Description
 
-This repository contains my solutions for the [gophercises](https://gophercises.com/) exercises. As a challenge, all codes are written with my own ideas without viewing the tutorial videos.
+## Description
+This repository contains my exploration of the [gophercises](https://gophercises.com/) exercises. As a challenge, all source codes written are my ideas without viewing the tutorial videos.
 
 
 ### Folder details
@@ -316,6 +316,32 @@ To run the program:
 ![img3](readme_images/img3.png)<br/><br/>
 ![img4](readme_images/img4.png)
 
+
 **17. pdf**
 
-Solution for the [20th](https://github.com/gophercises/pdf) exercise. Activities involved: making functions to create an invoice and certificate pdf, using the gofpdf library. 
+Solution for the [20th](https://github.com/gophercises/pdf) exercise. Activities involved: creating two programs related to pdf, which are invoice and certificate PDF file builders (we will cover both programs in the demonstration below)
+
+To run the program:
+
+- Open a terminal session and go to the pdf directory.<br/><br/>
+![pdf1](readme_images/pdf1.png)
+
+- Let's run the first program that will generate an invoice PDF file. Run the main.go file in the invoice folder with exactly two arguments. One for the input data path and the other one for the output path. (In this example, we'll use the data at the demoInvoice.csv path and put the result at demoInvoice.pdf)<br/><br/>
+![pdf2](readme_images/pdf2.png)
+
+- Let's take a look at the resulting PDF from the first program on a browser. (As you will see, though the resulting PDF has a lot of data contained (like a phone number, client name, etc.), for now, we are only able to alter the data in the item detail section)<br/><br/>
+![pdf3](readme_images/pdf3.png)
+
+- Now, we can start running our second program to create our certificate. Run the main.go file in the cert directory with exactly two arguments. The first argument is for the name of the certificate holder and the second one is for the output path. (in this example we will use the full name of this repository author, Lareza Farhan Wanaghi, and specifies demoCert.pdf as the output path)<br/><br/>
+![pdf4](readme_images/pdf4.png)
+
+- Check out our created certificate PDF on a browser.<br/><br/>
+![pdf5](readme_images/pdf5.png)
+
+
+### Conclusion
+In this journey of exploring the [gophercises](https://gophercises.com/) exercises, we have explored many things in the GO programming language world, including handling inputs, parsing data, building APIs, web applications, and CLI programs, dealing with encryption, and manipulating PDFs and images. Though the exercises were quite challenging, they were fun to do and taught us many things related to GO.
+
+
+### Disclaimer
+The [16th](https://github.com/gophercises/twitter) exercise is, unfortunately, skipped since the Twitter API specified is no longer free to use.
