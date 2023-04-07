@@ -57,7 +57,7 @@ To run the program:
 - Run the .go files in the main directory to start the web application. (By default, the program takes the gopher.json file to build the story tree. You can use the f flag to specify a path of another file)<br/><br/>
 ![cyoa2](readme_images/cyoa2.png)
 
-- Visit the root path of the web app on a browser (it will be redirected to the /intro path). (In this example, we chose some of the available options (the ones in a darker color) to make our story)<br/><br/>
+- Visit the root path of the web app, which will be redirected to the /intro path, on a browser. (In this example, we chose some of the available options (the ones in a darker color) to make our story)<br/><br/>
 ![cyoa3](readme_images/cyoa3.png)<br/><br/>
 ![cyoa4](readme_images/cyoa4.png)<br/><br/>
 ![cyoa5](readme_images/cyoa5.png)<br/><br/>
