@@ -135,13 +135,13 @@ To run the program:
 - Use the list subcommand to show the list of currently active to-do tasks.<br/><br/>
 ![task6](readme_images/task6.png)
 
-- You can mark an active task as done by using the do subcommand and list all marked tasks with the completed subcommand. (In the below example, we deleted the "studying math" task and then checked the the list of completed and active tasks)<br/><br/>
+- You can mark an active task as done by using the do subcommand and list all marked tasks with the completed subcommand. (In the below example, we deleted the "studying math" task and then checked the lists of completed and active tasks)<br/><br/>
 ![task7](readme_images/task7.png)
 
 
 **8. phone**
 
-This is the Solution for the [8th](https://github.com/gophercises/phone) exercise. Activities involved: creating a program that stores normalized (same format) and no duplicate phone numbers in a PostgreSQL database.
+This is the solution for the [8th](https://github.com/gophercises/phone) exercise. Activities involved: creating a program storing normalized (same format) and no duplicate phone numbers in a PostgreSQL database.
 
 To run the program:
 
@@ -167,7 +167,7 @@ To run the program:
 - Open a terminal session and go to the deck directory.<br/><br/>
 ![deck1](readme_images/deck1.png)
 
-- Run the main.go file in the main directory. (By default, the program creates a deck of suit cards with no joker included and sorts the deck based on the ascending order of the card IDs. Use the j flag to specify the number of jokers and the s flag to point out the index of the built-in sorting algorithms that will be used)<br/><br/>
+- Run the main.go file in the main directory. (By default, the program creates a deck of suit cards with no joker included and sorts the deck based on the ascending order of the card IDs. Use the j flag to specify the number of jokers and the s flag to point out the index of the built-in sorting algorithms that will be used to sort the deck)<br/><br/>
 ![deck2](readme_images/deck2.png)
 
 
@@ -199,11 +199,11 @@ To run the program:
 - Before we run the program, let's take a look at the folder that we will use as the target directory.<br/><br/>
 ![renamer2](readme_images/renamer2.png)
 
-- Run the main.go file in the main folder with exactly three arguments. The first argument specifies the pattern used to find the target files and parts of the names of the files that will be altered, the second one defines the replacement words for altering the file names, and the third one points out the path of the folder that will be scanned by the program. After running the command, check again the previous folder to see the result<br/><br/>
+- Run the main.go file in the main folder with exactly three arguments. The first argument specifies the pattern used to find the target files and parts of the names of the files that will be altered, the second one defines the replacement words for altering the file names, and the third one points out the path of the target folder that will be scanned by the program. After running the command, check again the previous folder to see the result<br/><br/>
 ![renamer3](readme_images/renamer3.png)<br/><br/>
 ![renamer4](readme_images/renamer4.png)
 
-- Additionally, you can also use regex patterns for the first and second arguments. (In the following example, we used regex patterns to match sequences of digits and append the N letter at the front of the sequences)<br/><br/>
+- Additionally, you can also use regex patterns for the first and second arguments. (In the following example, we used regex patterns to match sequences of digits and append the N letter at the fronts of the sequences)<br/><br/>
 ![renamer5](readme_images/renamer5.png)
 ![renamer6](readme_images/renamer6.png)
 
@@ -217,7 +217,7 @@ To run the program:
 - Open a terminal session and go to the quiet_hn directory.<br/><br/>
 ![quiet_hn1](readme_images/quiet_hn1.png)
 
-- Run the main.go file in the main folder to start running the web application. (By default, the application creates variables in memory for caching that will be refreshed every ten seconds. You can use the r flag to change the time for caching refreshment)<br/><br/>
+- Run the main.go file in the main folder to start running the web application. (By default, the application creates variables in memory for caching that will be refreshed every ten seconds. You can use the r flag to change the time for the caching refreshment)<br/><br/>
 ![quiet_hn2](readme_images/quiet_hn2.png)
 
 - Let's visit our running web application on a browser. (The application returns the top 30 stories from the API if the user visits its root path with no additional parameter. You can set the n query parameter to specify the number of stories returned)<br/><br/>
@@ -243,7 +243,7 @@ To run the program:
 - Though there are not many things there, the web application is running normally. Now, let's visit the /panic path of the web application. <br/><br/>
 ![recover4](readme_images/recover4.png)
 
-- The above output indicates the web application has recovered from a panic situation, and the stack traces printed are the traces for the corresponding panic situation. Click one of the links provided to show the source code associated with the given stack trace. (Below, we clicked the link at the very top of the stack traces and are shown the source code corresponding to that stack trace)<br/><br/>
+- The above output indicates the web application has recovered from a panic situation, and the stack traces printed are the traces for the corresponding panic situation. Click one of the links provided to show a source code associated with a given stack trace. (Below, we clicked the link at the very top of the stack traces and were shown the source code corresponding to that stack trace)<br/><br/>
 ![recover5](readme_images/recover5.png)
 
 
@@ -262,14 +262,14 @@ To run the program:
 - Run the secret command with no additional subcommands or arguments to test if the program is installed correctly. You should also see the documentation of the program as follow.<br/><br/>
 ![secret3](readme_images/secret3.png)
 
-- Let's populate some data into our storage by using the set subcommand. (By default, all of the commands executed use the default encoding key and storage file path. Use the k flag to change the encoding key and the f flag to point out a path of another file that will be used. In the example below, we stored three "key:value" pair data into our encrypted storage, namely "fb-password:123456", "ig-password:aabbccdd", and "gmail-password:uncrackable_pw")<br/><br/>
+- Let's populate some data into our storage by using the set subcommand. (By default, all of the commands executed use the default encoding key and storage file path. Use the k flag to change the encoding key and the f flag to point out a path of another file. In the example below, we stored three "key:value" pair data into our encrypted storage, namely "fb-password:123456", "ig-password:aabbccdd", and "gmail-password:uncrackable_pw")<br/><br/>
 ![secret4](readme_images/secret4.png)
 
 - Use the list subcommand to show key-value pairs stored in our storage and the get subcommand to get an individual value of a specific key. <br/><br/>
 ![secret5](readme_images/secret5.png)
 ![secret6](readme_images/secret6.png)
 
-- Below was the content of the file used for the encrypted storage after adding some data. As you can see, it is encrypted and unreadable.<br/><br/>
+- Below was the content of the file used for the encrypted storage after adding the data. As you can see, it is encrypted and unreadable.<br/><br/>
 ![secret7](readme_images/secret7.png)
 
 
@@ -288,7 +288,7 @@ To run the program:
 - Let's take a look at the root path of our application on a browser.<br/><br/>
 ![transform3](readme_images/transform3.png)
 
-- Select an image in your local workspace to specify the base of our upcoming generated images. Then, click the submit button to upload the image to the backend.<br/><br/>
+- The application needs an image to generate images. Let's select an image in our local workspace to specify the base of our upcoming generated images. Then, click the submit button to upload the image to the backend.<br/><br/>
 ![transform4](readme_images/transform4.png)<br/><br/>
 ![transform5](readme_images/transform5.png)
 
@@ -312,14 +312,14 @@ To run the program:
 - Run the main.go file in the main folder with exactly two arguments. The first argument specifies the path of the CSV file containing the chart data and the second one defines the path for the output file. (In this example, we drew the chart on two of the possible output formats, which are PNG and SVG. We used the data from the demoData.csv file and defines the demoPNG.png and demoSVG.svg as the output paths)<br/><br/>
 ![img2](readme_images/img2.png)
 
-- Now, let's take a look at our created files on a browser. (As you might have noticed, the SVG version is made more sophisticated than the PNG one. This is due to the robustness of the svggo library supporting the limited time, whereas the PNG version uses the basic built-in image library with finite functionality)
+- Now, let's take a look at our created files on a browser. (As you might have noticed, the SVG version is made more sophisticated than the PNG one. This is due to the robustness of the svggo library supporting the limited time, whereas the PNG version uses the basic built-in image library with finite functionality)<br/><br/>
 ![img3](readme_images/img3.png)<br/><br/>
 ![img4](readme_images/img4.png)
 
 
 **17. pdf**
 
-This is the solution for the [20th](https://github.com/gophercises/pdf) exercise. Activities involved: creating two programs related to pdf, one that makes an invoice letter on a PDF file and the other one creates a certificate instead. We will cover both of the programs in the demonstration below.
+This is the solution for the [20th](https://github.com/gophercises/pdf) exercise. Activities involved: creating two programs related to building a PDF file, one is for an invoice letter, and the other one is for a certificate. We will cover both of the programs in the demonstration below.
 
 To run the program:
 
