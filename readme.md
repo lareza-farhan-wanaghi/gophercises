@@ -4,7 +4,7 @@
 
 
 ## Description
-This repository contains my exploration for the [gophercises](https://gophercises.com/) exercises. As a challenge, all source codes written are my ideas without viewing the tutorial videos. (Note: Please visit links corresponding to specific exercises to see the official exercise details)
+This repository contains my exploration for the [gophercises](https://gophercises.com/) exercises. As a challenge, all source codes written are my ideas without viewing the tutorial videos. (Note: Please visit each link corresponding to a specific exercise to see the official exercise detail)
 
 
 ### Folder details
