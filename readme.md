@@ -340,7 +340,7 @@ To run the program:
 
 
 ### Conclusion
-To conclude, in this journey of exploring the [gophercises](https://gophercises.com/) exercises, the exercises have made me explore many things in the GO world, including handling inputs, parsing data, building APIs, web applications, and CLI programs, making use of databases, dealing with encryption, and manipulating PDFs and images. As a compliment, in my opinion, the exercises were quite fun to do and taught the takers many things related to GO.
+To conclude, in this journey of exploring the [gophercises](https://gophercises.com/) exercises, the exercises have made me explore many things in the GO world, including handling inputs, parsing data, building APIs, web applications, and CLI programs, making use of databases, dealing with encryption, and manipulating PDFs and images. As a compliment, in my opinion, the exercises are quite fun to do and teach the takers many things related to GO.
 
 
 ### Disclaimer
